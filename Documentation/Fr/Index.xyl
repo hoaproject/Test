@@ -1,14 +1,15 @@
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
 <yield id="chapter">
 
-  <p>Ensuring <strong>software quality</strong> is not easy. The
-  <code>Hoa\Test</code> library provides several tools to write and to execute
-  tests, to generate test data or tests themselves etc. This is the basis to
-  test all Hoa's libraries. Research papers have been published and
-  implemented inside <code>Hoa\Test</code> and related libraries (like
-  <code>Hoa\Praspel</code>, <code>Hoa\Realdom</code> etc.).</p>
+  <p>Assurer la <strong>qualité du logiciel</strong> n'est pas facile. La
+  bibliothèque <code>Hoa\Test</code> fournit plusieurs outils pour écrire et
+  exécuter des tests, générer des données de tests ou même des tests eux-même
+  etc… Ceci est la base pour tester les bibliothèques de Hoa. Des articles de
+  recherche ont été publiés et implémentés dans <code>Hoa\Test</code> et des
+  librairies connexes (comme <code>Hoa\Praspel</code>,
+  <code>Hoa\Realdom</code> etc.)</p>
 
-  <h2 id="Table_of_contents">Table of contents</h2>
+  <h2 id="Table_of_contents">Table des matières</h2>
 
   <tableofcontents id="main-toc" />
 
