@@ -15,37 +15,39 @@
 
   <h2 id="Introduction" for="main-toc">Introduction</h2>
 
-  <p>Software quality is a vast topic in Computer Science. There is a lot of
-  strategies, a lot of metrics… and a lot of confusion. One way to ensure
-  quality in Hoa is based on the testing strategy. Let's introduce this
-  chapter by some definitions and by presenting the tools provided by the
-  <code>Hoa\Test</code> library.</p>
+  <p>La qualité du logiciel est un sujet très vaste en Informatique. Il y a
+  beaucoup de stratégies, beaucoup de mesures… et beaucoup de confusion. Une
+  façon d'assurer la qualité dans Hoa repose sur la stratégie de test.
+  Commençons ce chapitre par quelques définitions et une présentation des outils
+  fournis par la bibliothèque <code>Hoa\Test</code>.</p>
 
-  <h3 id="Nature_of_tests" for="main-toc">Nature of tests</h3>
+  <h3 id="Nature_of_tests" for="main-toc">Nature des tests</h3>
 
-  <p>Informally, a test is executed on a <strong>System Under Test</strong>,
-  abbreviated SUT, and is composed of two parts:</p>
+  <p>Un test est exécuté sur un <em lang="en">System Under Test</em>,
+  abrégé SUT, et est composé de deux parties :</p>
   <ol>
-    <li><strong>Test data</strong> to execute the SUT, and</li>
-    <li>An <strong>oracle</strong>, establishing the <strong>test
-    verdict</strong>: Are the result of the execution and the state of
-    the SUT after its execution the ones we expect or not?</li>
+    <li>les<strong>données de test</strong> pour exécuter le SUT, et</li>
+    <li>un <strong>oracle</strong>, qui établit le
+    <strong>verdict du test</strong>: est-ce que les résultats de l'exécution et
+    l'état du SUT après son exécution sont ceux que l'on attendait ou pas ?</li>
   </ol>
-  <p>The values of the verdict are: <strong>Success</strong>,
-  <strong>fail</strong> or <strong>inconclusive</strong>. A success means this
-  is what we expect, a fail means this is not what we expect and an
-  inconclusive means this is not possible to give an answer. The important
-  part is: <q>“what <em>we</em> expect”</q>. By extension, we understand a
-  test does not check the SUT is <strong>verified</strong>.</p>
-  <blockquote cite="Dijkstra">Testing shows the presence, not the absence of
-  bugs.</blockquote>
-  <p>A test only checks the SUT is <strong>valid</strong>. The difference is
-  that a valid system has no bug for some <strong>non exhaustive
-  executions</strong>, but a verified system does what it is designed to do.
-  Despite tests do not proof the absence of bugs, they are useful (easy to
-  write, easy to read, not all system can be proven etc.). Nevertheless,
-  depending of the chosen test data, tests can be close to proofs. As an
-  example, a test with exhaustive test data can be considered as a proof.</p>
+  <p>Les valeurs du verdict sont : <strong>succès</strong>,
+  <strong>échec</strong> ou <strong>ambigu</strong>. Un succès signifie que c'est
+  ce que nous attendions, un échec signifie que ce n'est pas ce que nous
+  attendions et ambigu signifie qu'il n'est pas possible de donner une réponse.
+  La partie importante est <q>“ce que <em>nous</em> attendions”</q>. Par extension,
+  nous comprenons qu'un test n'asserte pas que le SUT est
+  <strong>vérifié</strong>.</p>
+  <blockquote cite="Dijkstra">Les tests montrent la présence, non pas l'absence
+  de bogues.</blockquote>
+  <p>Un test ne vérifie que la <strong>validité</strong> du SUT. La différence
+  est qu'un système valide n'a pas de bug pour quelques <strong>exécutions non
+  exhaustives</strong>, tandis qu'un système vérifié fait ce pourquoi il a été
+  conçu. Bien que les tests ne prouvent pas l'absence de bug, ils sont utiles
+  (facile à écrire, facile à lire, tout le système ne peut être prouvé etc).
+  Cependant, en fonction des données de test choisies, les tests peuvent être
+  presque considérés comme des preuves. Par exemple, un test avec des données de
+  tests exhaustives peut être considéré comme une preuve.</p>
   <p>A test can be written <strong>manually</strong>, for instance by a test
   engineer. A SUT is provided, the engineer uses test data to execute it and
   the test verdict is established by the engineer itself. In the case of an
