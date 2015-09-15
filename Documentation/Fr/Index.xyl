@@ -4,10 +4,10 @@
   <p>Assurer la <strong>qualité du logiciel</strong> n'est pas facile. La
   bibliothèque <code>Hoa\Test</code> fournit plusieurs outils pour écrire et
   exécuter des tests, générer des données de tests ou même des tests eux-même
-  etc… Ceci est la base pour tester les bibliothèques de Hoa. Des articles de
+  etc. Ceci est la base pour tester les bibliothèques de Hoa. Des articles de
   recherche ont été publiés et implémentés dans <code>Hoa\Test</code> et des
-  librairies connexes (comme <code>Hoa\Praspel</code>,
-  <code>Hoa\Realdom</code> etc.)</p>
+  bibliothèques connexes (comme <code>Hoa\Praspel</code>,
+  <code>Hoa\Realdom</code> etc.).</p>
 
   <h2 id="Table_of_contents">Table des matières</h2>
 
@@ -15,7 +15,7 @@
 
   <h2 id="Introduction" for="main-toc">Introduction</h2>
 
-  <p>La qualité du logiciel est un sujet très vaste en Informatique. Il y a
+  <p>La qualité logicielle est un sujet très vaste en Informatique. Il y a
   beaucoup de stratégies, beaucoup de mesures… et beaucoup de confusion. Une
   façon d'assurer la qualité dans Hoa repose sur la stratégie de test.
   Commençons ce chapitre par quelques définitions et une présentation des outils
@@ -26,25 +26,25 @@
   <p>Un test est exécuté sur un <em lang="en">System Under Test</em>,
   abrégé SUT, et est composé de deux parties :</p>
   <ol>
-    <li>les<strong>données de test</strong> pour exécuter le SUT, et</li>
+    <li>les <strong>données de test</strong> pour exécuter le SUT ; et</li>
     <li>un <strong>oracle</strong>, qui établit le
-    <strong>verdict du test</strong>: est-ce que les résultats de l'exécution et
-    l'état du SUT après son exécution sont ceux que l'on attendait ou pas ?</li>
+    <strong>verdict du test</strong> : est-ce que les résultats de l'exécution et
+    l'état du SUT après son exécution sont ceux que nous attendions ou pas ?</li>
   </ol>
   <p>Les valeurs du verdict sont : <strong>succès</strong>,
   <strong>échec</strong> ou <strong>ambigu</strong>. Un succès signifie que c'est
   ce que nous attendions, un échec signifie que ce n'est pas ce que nous
   attendions et ambigu signifie qu'il n'est pas possible de donner une réponse.
-  La partie importante est <q>“ce que <em>nous</em> attendions”</q>. Par extension,
-  nous comprenons qu'un test n'asserte pas que le SUT est
+  La partie importante est <q>« ce que <em>nous</em> attendions »</q>. Par
+  extension, nous comprenons qu'un test n'asserte pas que le SUT est
   <strong>vérifié</strong>.</p>
   <blockquote cite="Dijkstra">Les tests montrent la présence, non pas l'absence
-  de bogues.</blockquote>
-  <p>Un test ne vérifie que la <strong>validité</strong> du SUT. La différence
+  de bugs.</blockquote>
+  <p>Un test n'assure que la <strong>validité</strong> du SUT. La différence
   est qu'un système valide n'a pas de bug pour quelques <strong>exécutions non
   exhaustives</strong>, tandis qu'un système vérifié fait ce pourquoi il a été
   conçu. Bien que les tests ne prouvent pas l'absence de bug, ils sont utiles
-  (facile à écrire, facile à lire, tout le système ne peut être prouvé etc).
+  (facile à écrire, facile à lire, tous les systèmes ne peuvent être prouvés etc).
   Cependant, en fonction des données de test choisies, les tests peuvent être
   presque considérés comme des preuves. Par exemple, un test avec des données de
   tests exhaustives peut être considéré comme une preuve.</p>
