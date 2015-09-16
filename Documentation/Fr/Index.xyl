@@ -32,9 +32,9 @@
     l'état du SUT après son exécution sont ceux que nous attendions ou pas ?</li>
   </ol>
   <p>Les valeurs du verdict sont : <strong>succès</strong>,
-  <strong>échec</strong> ou <strong>ambigu</strong>. Un succès signifie que c'est
-  ce que nous attendions, un échec signifie que ce n'est pas ce que nous
-  attendions et ambigu signifie qu'il n'est pas possible de donner une réponse.
+  <strong>échec</strong> ou <strong>non conclusif</strong>. Un succès signifie
+  que c'est ce que nous attendions, un échec signifie que ce n'est pas ce que nous
+  attendions et non conclusif signifie qu'il n'est pas possible de donner une réponse.
   La partie importante est <q>« ce que <em>nous</em> attendions »</q>. Par
   extension, nous comprenons qu'un test n'asserte pas que le SUT est
   <strong>vérifié</strong>.</p>
