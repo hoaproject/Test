@@ -48,27 +48,31 @@
   Cependant, en fonction des données de test choisies, les tests peuvent être
   presque considérés comme des preuves. Par exemple, un test avec des données de
   tests exhaustives peut être considéré comme une preuve.</p>
-  <p>A test can be written <strong>manually</strong>, for instance by a test
-  engineer. A SUT is provided, the engineer uses test data to execute it and
-  the test verdict is established by the engineer itself. In the case of an
-  <strong>automated</strong> test, the execution of the SUT and the test
-  verdict are computed by the machine. This is the role of the “xUnit”
-  frameworks, such as <a href="http://atoum.org/">atoum</a> or
-  <a href="http://phpunit.de/">PHPUnit</a>. The engineer will use the frameworks
-  to write tests and the machine will execute them. Finally,
-  <strong>automatic</strong> tests are generated and executed by the machine.
-  The machine may rely on a specification, like a contract, to automatically
-  generate the tests (please, see <a href="@hack:chapter=Praspel">the
-  <code>Hoa\Praspel</code> library</a> or the research papers bellow we have
-  published about it to learn more about the Design-by-Contract and
-  Contract-based Testing paradigms). Automatic tests have two sub-categories:
-  <strong>Online</strong> and <strong>offline</strong> tests. Online means the
-  tests are generated and executed in one-pass, while offline means the tests
-  are executed and then executed later (with the test data or not).</p>
-  <p>In Hoa, we have both <strong>automated</strong> and <strong>offline
-  automatic</strong> tests.</p>
-  <p>This is a high classification of tests. A thinner one is described by the
-  following schema explaining what kind of tests to write:</p>
+  <p>Un test peut être écrit <strong>manuellement</strong>, par exemple par un
+  ingénieur de test. Un SUT est fourni, l'ingénieur utilise des données de test
+  pour l'exécuter et le verdict du test est établi par l'ingénieur. Dans le cas
+  d'un test <strong>automatisé</strong>, l'exécution du SUT et le verdict du
+  test sont calculés par la machine. C'est le rôle des frameworks « xUnit » tel
+  que <a href="http://atoum.org/">atoum</a> ou
+  <a href="http://phpunit.de/">PHPUnit</a>. L'ingénieur utilisera les frameworks
+  pour écrire des tests et la machine pour les exécuter. Finalement les tests
+  <strong>automatiques</strong> sont générés et exécutés par la machine.
+  La machine peut compter sur une spécification, comme un contrat, pour générer
+  automatiquement les tests (s'il vous plaît, allez voir la
+  <a href="@hack:chapter=Praspel">bibliothèque <code>Hoa\Praspel</code></a> ou
+  les rapports de recherches que nous avons publiés ci-dessous pour en apprendre
+  plus sur les paragdimes de <em lang="en">Design-by-Contract</em> et
+  <em lang="en">Contact-based Testing</em>).
+  Les tests automatiques ont deux sous-catégories : les tests
+  <strong>en ligne</strong> ou <strong>hors-ligne</strong>. En ligne signifie
+  que  les tests sont générés et exécutés en une seule passe, tandis que
+  hors-ligne signifie que les tests sont générés et exécutés plus tard
+  (avec des données de test ou non).</p>
+
+  <p>Dans Hoa nous avons aussi bien des tests <strong>automatisés</strong> que
+  des tests <strong>hors-ligne automatiques</strong>.</p>
+  <p>Ceci est une classification générale des tests. Une plus précise est décrite
+  par le schéma ci-dessous qui explique quel type de test écrire :</p>
   <figure>
     <object
       type="image/svg+xml"
@@ -77,41 +81,54 @@
     <figcaption>Dimensions of the test universe is represented by
     3 axis.</figcaption>
   </figure>
-  <p>The “Conception support” axis describes the <strong>visibility</strong> we
-  have on the System Under Test: Either <strong>black box</strong> or
-  <strong>white box</strong>. Their meanings are different according to the
-  context but we can consider a system as a white box if we look and use what
-  is <strong>inside</strong> the box, else this is a black box. For instance,
-  for unit tests, let say with a function as the SUT, black box testing will
-  consider only the inputs and the outputs of the function without considering
-  its body (even if it reads or writes global variables, streams etc.). On the
-  other hand, white box testing will consider the body of the function and the
-  testing strategy will be totally different.  What we expect from a black box
-  or a white box system is not the same.</p>
-  <p>The “System size" axis describes at what <strong>level</strong> (or
-  altitude) do we test: From the lowest one, <strong>unit</strong> (a function
-  or a method) to the highest one, the whole <strong>system</strong>, which
-  includes <strong>components</strong> (a set of functions) and the
-  <strong>integration</strong> of these components inside other ones, which
-  together form the system. All levels are important: This is not because a
-  function does what it is supposed to do that it will integrate nicely with
-  another one.</p>
-  <p>Finally, the “Type of test” axis describes the <strong>goal</strong> of the
-  tests: Either <strong>functional</strong> (“everything works as expected and
-  that's it”), <strong>robustness</strong> (“this is not possible to put the
-  system into an error state if we do something unexpected”),
-  <strong>performance</strong> (“the system supports heavy loads and behaves
-  as expected under these conditions”) etc.</p>
-  <p>In Hoa, we have <strong>white box</strong> and <strong>black box</strong>,
-  <strong>unit</strong> and <strong>functional</strong> tests. We also include
-  performance tests in some libraries.</p>
-  <p>Remember that each point in this test universe may imply different tools
-  and different development practices. When talking about tests, this is
-  important to have this schema in minds and to wonder where our problematic
-  locates.</p>
+  <p>L'axe "Support de conception" décrit la <strong>visibilité</strong> que nous
+  avons sur le <em lang="en">System Under Test</em> : soit
+  <strong>boite noire</strong> ou <strong>boite blanche</strong>. Leurs
+  significations sont différentes suivant le contexte mais nous pouvons
+  considérer un système comme une boite blanche si nous regardons et utilisons
+  ce qui est <strong>dans</strong> la boite, sinon
+  la boite est noire. Par exemple, pour les tests unitaires, disons que le SUT
+  est une fonction, les tests boite noire vont considérer seulement les entrées
+  et les sorties de la fonction sans considérer son corps (même si elle lit ou
+  écrit des variables globales, flux etc.). D'un autre côté, les tests boite
+  blanche vont considérer le corps de la fonction et la stratégie de test sera
+  totalement différente. Nous n'attendons pas la même chose d'un système boite
+  noire ou boite blanche.</p>
+  <p>L'axe "Taille du système" décrit à quel <strong>niveau</strong> (ou altitude)
+  nous testons : du plus bas, <strong>unitaire</strong> (une fonction ou une
+  méthode) au plus haut, tout le <strong>système</strong>, ce qui inclut les
+  <strong>composants</strong> (ensemble de fonctions) et
+  l'<strong>intégration</strong> des composants dans d'autres composants, qui,
+  ensemble, forment le système. Tous les niveaux sont important : ce n'est pas
+  parce qu'une fontion fait ce qu'elle est supposée faire qu'elle s'intégrera
+  correctement avec une autre.</p>
 
-  <h3 id="Test_test_case_and_test_suite" for="main_toc">Test, test case and test
-  suite</h3>
+  <p>Enfin, l'axe "Type de test" décrit l'<strong>objectif</strong> des tests :
+  <strong>fonctionnel</strong> (“tout fonctionne comme prévu et c'est
+  tout“), <strong>robustesse</strong> (“il n'est pas possible de mettre
+  le système dans un état d'erreur si nous faisons quelque chose d'imprévu“),
+  <strong>performance</strong> (“le système supporte une forte charge
+  et se comporte correctement dans ces conditions“) etc.</p>
+  <p>Dans Hoa, nous avons des tests <strong>boite blanche</strong> et
+  <strong>boite noire</strong>, <strong>unitaires</strong> et
+  <strong>fonctionnels</strong>. Nous incluons également des tests de performance
+  dans certaines bibliothèques.</p>
+  <p>Souvenez-vous que chaque point dans cet univers des tests peut impliquer
+  différents outils et différentes pratiques de développement. Quand nous parlons
+  de tests, il est important de garder ce schéma à l'esprit et de situer ou se
+  trouve notre problématique.</p>
+
+  <h3 id="Test_test_case_and_test_suite" for="main_toc">Test, cas de test et
+  suite de test</h3>
+
+  <p>Officiellement, un <strong>test</strong> d'un SUT est un ensemble de données
+  (appelées données de test) qui alimentent les valeurs des arguments (aussi
+  appelés entrées) d'un SUT. Un <strong>cas de test</strong> est une paire
+  composée d'un état (le contexte dans lequel est exécuté le test) et un test.
+  Une <strong>suite de test</strong> est ensemble de cas de test. Par conséquent,
+  il y a deux états du point du vue du test : un <strong>pré-état</strong>
+  — avant l'exécution du SUT — et un <strong>post-état</strong> — après
+  l'exécution —.
 
   <p>Formally, a <strong>test</strong> of a SUT is a set of data (called test
   data) that fixes the values of the arguments (also called inputs) of the
