@@ -118,46 +118,37 @@
   de tests, il est important de garder ce schéma à l'esprit et de situer ou se
   trouve notre problématique.</p>
 
-  <h3 id="Test_test_case_and_test_suite" for="main_toc">Test, cas de test et
+  <h3 id="Test_test_case_and_test_suite" for="main_toc">Test, scénario de test et
   suite de test</h3>
 
   <p>Officiellement, un <strong>test</strong> d'un SUT est un ensemble de données
   (appelées données de test) qui alimentent les valeurs des arguments (aussi
-  appelés entrées) d'un SUT. Un <strong>cas de test</strong> est une paire
+  appelés entrées) d'un SUT. Un <strong>scénario de test</strong> est une paire
   composée d'un état (le contexte dans lequel est exécuté le test) et un test.
-  Une <strong>suite de test</strong> est ensemble de cas de test. Par conséquent,
-  il y a deux états du point du vue du test : un <strong>pré-état</strong>
-  — avant l'exécution du SUT — et un <strong>post-état</strong> — après
-  l'exécution —.
-
-  <p>Formally, a <strong>test</strong> of a SUT is a set of data (called test
-  data) that fixes the values of the arguments (also called inputs) of the
-  SUT. A <strong>test case</strong> is a pair composed of a state (the context
-  in which the test is executed) and a test. A <strong>test suite</strong> is
-  a set of test cases. Therefore, there is two states from the test point of
-  view: A <strong>pre-state</strong> —before the execution of the SUT— and a
-  <strong>post-state</strong> —after the execution—.</p>
-  <p>Building the pre-state is something crucial: The goal is to put the SUT into a
-  specific (pre-)state in order to test it. The part of the test case
-  responsible to create the pre-state is called the <strong>preamble</strong>.
-  Thus, the preambler is a code that puts the SUT into a specific state.</p>
-  <p>So, when writing a test case, we will have 3 items to consider:</p>
+  Une <strong>suite de test</strong> est ensemble de scénario de test. Par
+  conséquent, il y a deux états du point du vue du test : un
+  <strong>pré-état</strong> — avant l'exécution du SUT — et un
+  <strong>post-état</strong> — après l'exécution —.</p>
+  <p>Construire le pré-état est critique : le but est de mettre le SUT dans un
+  (pré-)état spécifique afin de le tester. La partie du scénario de test responsable
+  de créer le pré-état est appelé le <strong>préambule</strong>. Ainsi, le
+  préambler est le code qui met le SUT dans un état spécifique.</p>
+  <p>Ainsi, en écrivant un scénario de test, nous aurons 3 éléments à considérer :</p>
   <ol>
-    <li>The <strong>preamble</strong>, to put the SUT into a specific
-    state,</li>
-    <li>The <strong>execution</strong>, to run the SUT and get a result,</li>
-    <li>The <strong>oracle</strong>, to compute the test verdict (based on the
-    execution result and the post-state).</li>
+    <li>Le <strong>préambule</strong>, pour mettre le SUT dans un état spécifique,</li>
+    <li>L'<strong>exécution</strong>, pour exécuter le SUT et obtenir un résultat,</li>
+    <li>L'<strong>oracle</strong>, pour évaluer le verdict (basé sur le résultat
+    de l'exécution et le post-état).</li>
   </ol>
-  <p>The oracle consists of a sequence of assertions: “Is this value equals
-  to…?”, “Is this value changed this way…?” etc. It is supposed to be able to
-  check the form of some data as much as comparing other data between the
-  pre-state and the post-state.</p>
-  <p>In a test case, we represent and introduce the preamble, the execution and
-  the oracle respectively by the <code>given</code>, <code>when</code> and
-  <code>then</code> keywords. This will be detail hereinafter.</p>
+  <p>L'oracle consiste en une séquence d'assertions : “Est-ce que cette valeur
+  est égale à… ?”, “Est-ce que la valeur a changé de cette façon… ?” etc. Il
+  est censé pouvoir vérifier la forme de certaines données mais également
+  comparer des données entre le pré et le post-état.</p>
+  <p>Dans un scénario de test, nous représentons et introduisons le préambule,
+  l'exécution et l'oracle respectivement par les mots clés <code>given</code>,
+  <code>when</code> et <code>then</code>. Ceci sera détaillé ci-après.</p>
 
-  <h3 id="Test_framework" for="main-toc">Test framework</h3>
+  <h3 id="Test_framework" for="main-toc">Framework de test</h3>
 
   <p>Hoa did not developed its own test framework for several reasons. The main
   one is that this is a laborious task. It implies more development, more tools
