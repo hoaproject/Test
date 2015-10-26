@@ -135,8 +135,8 @@
   préambler est le code qui met le SUT dans un état spécifique.</p>
   <p>Ainsi, en écrivant un scénario de test, nous aurons 3 éléments à considérer :</p>
   <ol>
-    <li>Le <strong>préambule</strong>, pour mettre le SUT dans un état spécifique,</li>
-    <li>L'<strong>exécution</strong>, pour exécuter le SUT et obtenir un résultat,</li>
+    <li>Le <strong>préambule</strong>, pour mettre le SUT dans un état spécifique ;</li>
+    <li>L'<strong>exécution</strong>, pour exécuter le SUT et obtenir un résultat ;</li>
     <li>L'<strong>oracle</strong>, pour évaluer le verdict (basé sur le résultat
     de l'exécution et le post-état).</li>
   </ol>
