@@ -61,7 +61,7 @@
   Contract-based Testing paradigms). Automatic tests have two sub-categories:
   <strong>Online</strong> and <strong>offline</strong> tests. Online means the
   tests are generated and executed in one-pass, while offline means the tests
-  are executed and then executed later (with the test data or not).</p>
+  are generated and then executed later (with the test data or not).</p>
   <p>In Hoa, we have both <strong>automated</strong> and <strong>offline
   automatic</strong> tests.</p>
   <p>This is a high classification of tests. A thinner one is described by the
@@ -277,7 +277,7 @@ class Bar extends Test\Unit\Suite
     // When:
     $result = $x + $y;
     // Then:
-    $this->integer($result)>-isEqualTo(3);
+    $this->integer($result)->isEqualTo(3);
 }</code></pre>
   <p>We however use the first form, which is clearer: Indentation, special
   keywords (through method names) and force us to clearly separate these
