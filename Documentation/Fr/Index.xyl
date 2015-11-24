@@ -177,31 +177,32 @@
   sont même testées avec atoum et Hoa (avec <code>atoum/praspel-extension</code>).
   La boucle est bouclée.</p>
 
-  <h3 id="Research_papers" for="main-toc">Research papers</h3>
+  <h3 id="Research_papers" for="main-toc">Etudes</h3>
 
-  <p>Several <strong>research papers</strong> (articles, journal and a PhD
-  thesis) have been published about <code>Hoa\Test</code>,
-  <code>Hoa\Praspel</code> and <code>Hoa\Realdom</code>:</p>
+  <p>Plusieurs <strong>études</strong> (articles, journaux et une thèse de
+  doctorat) ont été publiées à propos de <code>Hoa\Test</code>,
+  <code>Hoa\Praspel</code> et <code>Hoa\Realdom</code>:</p>
   <ul>
-    <li><cite>A Constraint Solver for PHP Arrays</cite>, presented at
+    <li><cite>A Constraint Solver for PHP Arrays</cite>, présenté à
     <a href="http://cstva2013.univ-fcomte.fr/">CSTVA 2013</a> (Luxembourg,
     Luxembourg), <a href="@research:article=Cstva13">article</a>,
-    <a href="@keynote:keynote=Cstva13/EGB13.pdf">presentation</a> and
-    <a href="@event:event=Cstva13">details</a>,</li>
+    <a href="@keynote:keynote=Cstva13/EGB13.pdf">présentation</a> et
+    <a href="@event:event=Cstva13">détails</a> ;</li>
     <li><cite>Grammar-Based Testing using Realistic Domains in PHP</cite>,
-    presented at
+    présenté à
     <a href="https://sites.google.com/site/amost2012/">A-MOST 2012</a>
     (Montréal, Canada), <a href="@research:article=Amost12">article</a>,
-    <a href="@keynote:keynote=Amost12/EDGB12.pdf">presentation</a> and
-    <a href="@event:event=Amost12">details</a>,</li>
+    <a href="@keynote:keynote=Amost12/EDGB12.pdf">présentation</a> et
+    <a href="@event:event=Amost12">détails</a> ;</li>
     <li><cite>Praspel: A Specification Language for Contract-Driven Testing in
-    PHP</cite>, presented at <a href="http://ictss2011.lri.fr/">ICTSS
-    2011</a> (Paris, France), <a href="@research:article=Ictss11">article</a> and
-    <a href="@keynote:keynote=Ictss11/EDGB11.pdf">presentation</a>.</li>
+    PHP</cite>, présenté à <a href="http://ictss2011.lri.fr/">ICTSS
+    2011</a> (Paris, France), <a href="@research:article=Ictss11">article</a> et
+    <a href="@keynote:keynote=Ictss11/EDGB11.pdf">présentation</a>.</li>
   </ul>
-  <p>These papers are about test data <strong>generation</strong> and
-  <strong>validation</strong>, including Design-by-Contract and Contract-based
-  Testing in PHP, along with Grammar-based Testing and Solver-based Testing.</p>
+  <p>Ces documents évoquent la <strong>génération</strong> et de la
+  <strong>validation</strong> de données de test, incluant le Design-by-Contract
+  et le Contract-based-Testing en PHP, ainsi que le Grammar-based Testing et le
+  Solver-based Testing.</p>
 
   <h2 id="Writing_tests" for="main-toc">Writing tests</h2>
 
