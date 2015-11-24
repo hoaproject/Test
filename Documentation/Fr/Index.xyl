@@ -164,18 +164,18 @@
   commande pour exécuter les tests avec everything pre-packaged. En conséquence,
   <code>Hoa\Test</code> fournit un environnement de test prêt à l'emploi pour
   Hoa.</p>
-  <p>One shall not be surprised to see some contributors of Hoa as contributors
-  of atoum. The two communities are strongly linked. Hoa also provides
-  official contributions to atoum like
-  <a href="@central_resource:path=Contributions/Atoum/PraspelExtension">the
-  <code>atoum/praspel-extension</code> extension</a> and some other
-  extensions are based on Hoa, like
-  <a href="https://github.com/atoum/ruler-extension">the
-  <code>atoum/ruler-extension</code> extension</a> which is based on
-  <a href="@hack:chapter=Ruler">the <code>Hoa\Ruler</code> library</a>, also
-  used by <code>Hoa\Test</code>. Even some atoum's extensions are tested with
-  atoum and Hoa (with <code>atoum/praspel-extension</code>). The loop is
-  complete.</p>
+  <p>Il ne faut pas être surpris de voir certains contributeurs de Hoa contribuer
+  également à atoum. Les deux communautés sont étroitement liées. Hoa fournit
+  également des contributions officielles à atoum tel que
+  <a href="@central_resource:path=Contributions/Atoum/PraspelExtension">l'extension
+  <code>atoum/praspel-extension</code></a> et d'autres extensions sont basées sur
+  Hoa, par exemple
+  <a href="https://github.com/atoum/ruler-extension">l'extension
+  <code>atoum/ruler-extension</code></a> qui est basée sur
+  <a href="@hack:chapter=Ruler">la bibliothèque <code>Hoa\Ruler</code></a>,
+  également utilisée par <code>Hoa\Test</code>. Certaines extensions de atoum
+  sont même testées avec atoum et Hoa (avec <code>atoum/praspel-extension</code>).
+  La boucle est bouclée.</p>
 
   <h3 id="Research_papers" for="main-toc">Research papers</h3>
 
