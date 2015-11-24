@@ -150,18 +150,19 @@
 
   <h3 id="Test_framework" for="main-toc">Framework de test</h3>
 
-  <p>Hoa did not developed its own test framework for several reasons. The main
-  one is that this is a laborious task. It implies more development, more tools
-  to maintain, less people focused on Hoa etc. Instead, we prefer to choose a
-  good project to rely on and contribute to it. Then, we choose
-  <a href="http://atoum.org/">atoum</a>, <q>“a simple, modern and intuitive test
-  framework”</q>.</p>
-  <p>Thus, <code>Hoa\Test</code> is the basis to test all Hoa's libraries. It
-  wraps atoum and it aims at being a bridge between Hoa's features and
-  atoum's features. It also adds some features when needed. This is more than
-  an abstract layer on top of atoum.  <code>Hoa\Test</code> also provides its
-  own command-line to run the tests with everything pre-packaged. Consequently,
-  <code>Hoa\Test</code> provides a ready-to-use test environment targeting
+  <p>Hoa n'a pas développé son propre framework de tests pour plusieurs raisons.
+  La raison principale étant que c'est une tâche laborieuse. Cela implique plus
+  de développement, plus d'outils à maintenir, moins de gens concentrés sur Hoa
+  etc. A la place, nous préférons choisir un bon projet sur lequel nous
+  appuyer et y contribuer. Nous avons opté pour <a href="http://atoum.org/">atoum</a>,
+  <q>“un framework de test simple, moderne et intuitif”</q>.</p>
+  <p>Ainsi, la bibliothèque <code>Hoa\Test</code> est la base pour tester toutes
+  les bibliothèques de Hoa. Elle intègre atoum et vise à être un pont entre
+  les fonctionnalités de Hoa et atoum. Elle ajoute également quelques
+  fonctionnalités si nécessaire. Elle est plus qu'une couche d'abstraction au
+  dessus d'atoum. <code>Hoa\Test</code> fournit également sa propre ligne de
+  commande pour exécuter les tests avec everything pre-packaged. En conséquence,
+  <code>Hoa\Test</code> fournit un environnement de test prêt à l'emploi pour
   Hoa.</p>
   <p>One shall not be surprised to see some contributors of Hoa as contributors
   of atoum. The two communities are strongly linked. Hoa also provides
