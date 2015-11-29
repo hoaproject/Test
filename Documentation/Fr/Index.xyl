@@ -204,21 +204,22 @@
   et le Contract-based-Testing en PHP, ainsi que le Grammar-based Testing et le
   Solver-based Testing.</p>
 
-  <h2 id="Writing_tests" for="main-toc">Writing tests</h2>
+  <h2 id="Writing_tests" for="main-toc">Ecrire des tests</h2>
 
-  <p>Each library provides a <code>Test/</code> directory at the root of the
-  repository. This is where tests are located. Automated unit tests can be found in
-  the <code>Test/Unit/</code> directory while automatically generated unit tests can
-  be found in the <code>Test/Praspel/Unit/</code> directory (not by default,
-  they must be generated first).</p>
+  <p>Chaque bibliothèque dispose d'un dossier <code>Test/</code> à la racine de
+  son dépôt. C'est dans ce dossier que se trouvent les tests. Les tests unitaires
+  automatisés sont dans le dossier <code>Test/Unit/</code> tandis que les tests
+  unitaires générés automatiquement se trouvent dans le dossier
+  <code>Test/Praspel/Unit/</code> (pas par défaut, ils doivent d'abord être
+  générés).</p>
 
-  <h3 id="Automated_unit_tests" for="main-toc">Automated unit tests</h3>
+  <h3 id="Automated_unit_tests" for="main-toc">Tests unitaires automatisés</h3>
 
-  <p>In Hoa, a test suite is represented by a file, containing a class. A test
-  case is a method in this class, expressing the preamble, the execution of
-  the SUT and the oracle.  The template of a test suite is then the following
-  (let's say for the <code>Test/Unit/Bar.php</code> test suite of the
-  <code>Hoa\Foo</code> library):</p>
+  <p>Dans Hoa, une suite de test est représentée par un fichier contenant une
+  classe. Un cas de test est une méthode de cette classe qui exprime le préambule,
+  l'exécution du SUT et l'oracle. Le modèle d'une suite de test est le suivant
+  (supposons la suite de test <code>Test/Unit/Bar.php</code> de la bibliothèque
+  <code>Hoa\Foo</code>) :</p>
   <pre><code class="language-php">namespace Hoa\Foo\Test\Unit;
 
 use Hoa\Foo\Bar as SUT;
