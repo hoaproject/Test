@@ -40,3 +40,9 @@ if (false !== getenv('TRAVIS')) {
 
     $runner->addReport($coverallsReport);
 }
+
+$telemetry = new mageekguy\atoum\reports\telemetry();
+$telemetry->readProjectNameFromComposerJson(__DIR__ . '/composer.json');
+$telemetry->addWriter(new mageekguy\atoum\writers\std\out());
+$runner->addReport($telemetry);
+
