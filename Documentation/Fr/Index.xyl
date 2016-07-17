@@ -232,23 +232,24 @@ class Bar extends Test\Unit\Suite
         // test case.
     }
 }</code></pre>
-  <p>We define an alias <code>SUT</code> to the current System Under Test. In a
-  unit test context, this is a method or a class. We can also declare the
-  <code>CUT</code> alias, standing for Class Under Test, and <code>LUT</code>
-  for Library Under Test. <code>LUT</code> is useful if we need to access to
-  other classes in the same library. Because they are unit tests, we should not
-  use other classes but remember that a test case is composed of a preamble and
-  it needs to be build. In this case, <code>LUT</code> could be defined to
+  <p>On définit un alias <code>SUT</code> pour le <em lang="en">System Under Test</em> 
+  actuel. Dans le contexte d'un test unitaire, c'est une méthode ou une classe. 
+  On peut également déclarer l'alias <code>CUT</code>, pour <em lang="en">Class Under Test</em>, 
+  et <code>LUT</code> pour <em lang="en">Library Under Test</em>. <code>LUT</code> 
+  est utile si  nous devons accéder à d'autres classes de la même bibliothèque. 
+  Etant donné que ce sont des tests unitaires, nous ne devons pas utiliser d'autres
+  classes mais rappelez-vous qu'un case de test est composé d'un préambule et 
+  qu'il doit être construit. Dans ce cas, <code>LUT</code> peut être défini comme
   <code>Hoa\Foo</code>.</p>
-  <p>The <code>Bar</code> class extends the <code>Hoa\Test\Unit\Suite</code>
-  class, which defines a unit test suite. It offers all the test API we need
-  to write tests.</p>
-  <p>Test cases are public method. They do not use a camel case notation but an
-  underscore lower-cased notation. They must be prefixed by
-  <code>case_</code>. The template of a test case must follow the preamble,
-  execution and oracle principle, respectively represented by the
-  <code>given</code>, <code>when</code> and <code>then</code> keywords, and
-  thus must be written as follows:</p>
+  <p>La classe <code>Bar</code> étends la classe <code>Hoa\Test\Unit\Suite</code>
+  qui définit une suite de tests unitaires. Elle offre toute l'API de test 
+  dont on a besoin pour écrire des tests.</p>
+  <p>Les cas de test sont des méthodes publiques. Elles n'utilisent pas la 
+  notation camel case mais une notation <em lang="en">underscore lower-cased</em>. 
+  Elles  doivent être préfixées par <code>case_</code>. Un cas de test doit 
+  suivre la structure préambule, exécution et oracle, représentés respectivement 
+  par les mots clés <code>given</code>, <code>when</code> et <code>then</code>. 
+  Un cas de test doit donc être écrit de la manière suivante :</p>
   <pre><code class="language-php">public function case_classic()
 {
     $this
