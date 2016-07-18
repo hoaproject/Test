@@ -265,10 +265,11 @@ class Bar extends Test\Unit\Suite
         ->then
             ->…;
 }</code></pre>
-  <p>The <code>given</code> and <code>when</code> “control flow structures” are
-  function calls with an unbounded arity. They are void methods, they do
-  nothing. The goal is not to pass something to them but to declare variables,
-  to establish the preamble and to execute the test. For instance:</p>
+  <p>Les "structures de contrôle" <code>given</code> et <code>when</code> sont 
+  des appels de fonction avec une arité non-liée. Ce sont des méthodes vides, 
+  elles ne font rien. Le but n'est pas de leur passer quelque chose mais de 
+  déclarer des variables pour établir le préambule et exécuter le test. Par 
+  exemple :</p> 
   <pre><code class="language-php">public function case_sum()
 {
     $this
@@ -283,7 +284,7 @@ class Bar extends Test\Unit\Suite
             ->integer($result)
                 ->isEqualTo(3);
 }</code></pre>
-  <p>This is strictly equivalent to write:</p>
+  <p>Ceci est strictement équivalent à écrire :</p>
   <pre><code class="language-php">public function case_sum()
 {
     // Given:
@@ -294,16 +295,16 @@ class Bar extends Test\Unit\Suite
     // Then:
     $this->integer($result)>-isEqualTo(3);
 }</code></pre>
-  <p>We however use the first form, which is clearer: Indentation, special
-  keywords (through method names) and force us to clearly separate these
-  3 parts: Preamble, test execution and oracle.</p>
-  <p>The <code class="language-php">$result</code> variable is special. It must
-  always <strong>hold the result</strong> of the test execution, i.e. the
-  result of the SUT's <code class="language-php">return</code> statement. This
-  is a <strong>convention</strong>.</p>
-  <p>One test case can contain multiple test executions with multiple oracles
-  (for instance if a SUT returns different results according to the time).
-  Then, the test case must be written as follows:</p>
+  <p>Nous utilisons toutefois la première forme qui est plus claire, l'indentation
+  et les mots clés spéciaux (au travers des noms de méthodes) nous forcent à 
+  séparer clairement les 3 parties : préambule, exécution du test et oracle.</p>
+  <p>La variable <code class="language-php">$result</code> est spéciale. Elle 
+  doit toujours <strong>contenir le résultat</strong> de l'exécution du test, 
+  i.e. le résultat de la déclaration <code class="language-php">return</code> 
+  du SUT. Ceci est une <strong>convention</strong>.</p> 
+  <p>Un cas de test peut contenir plusieurs exécutions avec des oracles multiples
+  (par exemple si un SUT retourne différent résultats en fonction du temps). 
+  Ainsi, le cas de test doit être écrit comme ceci :</p>
   <pre><code class="language-php">public function case_classic()
 {
     $this
@@ -320,9 +321,10 @@ class Bar extends Test\Unit\Suite
         ->then
             ->…;
 }</code></pre>
-  <p>Assertions are always used after the <code>then</code> part and most of the
-  time has the form <code><em>assertion-group</em>-><em>assertion</em></code>.
-  We can link assertion groups too. For instance:</p>
+  <p>Les assertions sont toujours utilisées après la partie <code>then</code> et
+  ont la plupart du temps la forme 
+  <code><em>assertion-groupe</em>-><em>assertion</em></code>. Nous pouvons 
+  également lier des groupes d'assertions. Par exemple :</p>
   <pre><code class="language-php">public function case_sum()
 {
     $this
