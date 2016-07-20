@@ -342,16 +342,16 @@ class Bar extends Test\Unit\Suite
             ->string((string) $result)
                 ->isNotEmpty();
 }</code></pre>
-  <p><a href="http://docs.atoum.org/en/latest/asserters.html">The list of all
-  assertions</a> can be find on atoum's documentation. Even if this is pretty
-  natural to write assertions because it is close to “human conventions”,
-  sometimes this is useful to discover that a specific assertion already exists,
-  like <code>float->isNearlyEqualTo</code> which compares two floats as
-  expected most of the time. So feel free to check atoum's documentation
-  often!</p>
+  <p><a href="http://docs.atoum.org/en/latest/asserters.html">La liste de toutes
+  les assertions<a> peut être trouvée dans la documentation d'atoum. Même s'il 
+  est naturel d'écrire des assertions car elles sont proches des "conventions 
+  humaines", il est parfois utile de découvrir qu'une assertion spécifique 
+  existe déjà, comme par exemple <code>float->isNearlyEqualTo</code> qui compare 
+  2 flottants comme prévu la plupart du temps. N'hésitez pas à consulter la 
+  documentation d'atoum régulièrement !</p>
 
-  <h4 id="Automatic_test_data_generation" for="main-toc">Automatic test data
-  generation</h4>
+  <h4 id="Automatic_test_data_generation" for="main-toc">Génération automatique 
+  des données de test</h4>
 
   <p><code>Hoa\Test</code> includes
   <a href="@central_resource:path=Contributions/Atoum/PraspelExtension">the
