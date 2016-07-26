@@ -353,21 +353,20 @@ class Bar extends Test\Unit\Suite
   <h4 id="Automatic_test_data_generation" for="main-toc">Génération automatique 
   des données de test</h4>
 
-  <p><code>Hoa\Test</code> includes
-  <a href="@central_resource:path=Contributions/Atoum/PraspelExtension">the
-  <code>atoum/praspel-extension</code> extension</a>. This extension
-  includes <a href="@hack:chapter=Praspel">the <code>Hoa\Praspel</code>
-  library</a> and <a href="@hack:chapter=Realdom">the
-  <code>Hoa\Realdom</code> library</a> inside atoum. When doing manual or
-  automated tests, this extension can be used to <strong>automatically generate
-  test data</strong>.</p>
-  <p>All we need is to describe a realistic domain (see
-  <a href="@hack:chapter=Realdom">the <code>Hoa\Realdom</code> library</a>) with
-  the <code>realdom</code> assertion group and then use the <code>sample</code>
-  “assertion” (internally this is a <em>handler</em> but the syntax is the same)
-  to generate one value or <code>sampleMany</code> to generate many values. For
-  instance, to automatically generate an integer in the interval 7 to 13 or 42
-  to 153:</p>
+  <p><code>Hoa\Test</code> inclut 
+  <a href="@central_resource:path=Contributions/Atoum/PraspelExtension">
+  l'extension <code>Hoa\Praspel</code></a>. Cette extension inclut 
+  <a href="@hack:chapter=Praspel">la bibliothèque <code>Hoa\Praspel</code></a< 
+  et <a href="@hack:chapter=Realdom">la bibliothèque <code>Hoa\Realdom</code></a>
+  dans atoum. Lors de tests manuels ou automatisés, cette extension peut être 
+  utilisée pour <strong>générer automatiquement des données de test</strong>.</p>
+  <p>Tout ce que nous avons à faire est de décrire un domaine réaliste (voir la 
+  <a href="@hack:chapter=Realdom">bibliothèque <code>Hoa\Realdom</code></a>) avec
+  l'assertion de groupe <code>realdom</code> et utiliser ensuite l'“assertion” 
+  <code>sample</code> (à l'interne c'est un <em>handler</em> mais la syntaxe est 
+  la même) pour générer une valeur ou <code>sampleMany</code> pour générer 
+  plusieurs valeurs. Par exemple, pour générer automatiquement des entiers dans 
+  l'interval 7 à 13 ou 42 à 153:</p>
   <pre><code class="language-php">public function case_sum()
 {
     $this
