@@ -383,24 +383,24 @@ class Bar extends Test\Unit\Suite
         ->then
           ->…;
 }</code></pre>
-  <p>Actually, <code>atoum/praspel-extension</code> provides 3 asserters to
-  generate data and 1 asserter to validate data:</p>
+  <p>Actuellement, <code>atoum/praspel-extension</code> fournit 3 asserters pour 
+  générer des données et 1 asserter pour les valider :</p>
   <ol>
-    <li><code>realdom</code> to create a a realistic domain disjunction (see the
-    <code>or</code> in the previous example),</li>
-    <li><code>sample</code> to generate one datum from a realistic domains
-    disjunction,</li>
-    <li><code>sampleMany</code> to generate several data,</li>
-    <li><code>predicate</code> to validate a datum against a realistic domain
-    disjunction.</li>
+    <li><code>realdom</code> pour créer une disjonction de domaine réaliste 
+    (<code>or</code> dans l'exemple précédent),</li>
+    <li><code>sample</code> pour générer une donnée depuis une disjonction de 
+    domaine réaliste,</li>
+    <li><code>sampleMany</code> pour générer plusieurs données,</li>
+    <li><code>predicate</code> pour valider une données en fonction d'une 
+    disjonction de domaine réaliste.</li>
   </ol>
-  <p><code>Hoa\Realdom</code> provides a standard realistic domain collection,
-  which includes very useful ones, like <code>regex</code> that describes a
-  regular expression (in <a href="http://pcre.org/">the PCRE format</a>).
-  Thus, we are able to <strong>automatically generate</strong> a datum against
-  or <strong>validate</strong> data <strong>matching regular
-  expressions</strong>. The following example generate one string similar to
-  an email address:</p>
+  <p><code>Hoa\Realdom</code> fournit une collection de domaines réaliste 
+  standards, dont certains très utiles, comme <code>regex</code> qui décrit une 
+  expression régulière (dans <a href="http://pcre.org/">le format PCRE</a>).
+  Ainsi, nous sommes capable de <strong>générer automatiquement</strong> ou 
+  <strong>valider</strong> une donnée qui <strong>correspond à une expression 
+  régulière</strong>. L'exemple suivant génère une chaîne similaire à une 
+  adresse email :</p>
   <pre><code class="language-php">$this
     ->given(
         $email = $this->sample(
@@ -409,8 +409,8 @@ class Bar extends Test\Unit\Suite
         …
     )
     ->…</code></pre>
-  <p>The following example declare a realistic domain representing a date with
-  the <code>d/m H:i</code> format, between yesterday and the next Monday:</p>
+  <p>L'exemple ci-dessous déclare un domaine réaliste qui représente une date 
+  avec le format <code>d/m H:i</code>, entre hier et lundi prochain :</p>
   <pre><code class="language-php">$this
     ->given(
         $_date = $this->realdom->date(
@@ -422,9 +422,9 @@ class Bar extends Test\Unit\Suite
         )
     )
     ->…</code></pre>
-  <p>Then, to generate one date:</p>
+  <p>Ensuite, pour générer une date :</p>
   <pre><code class="language-php">$this->sample($_date)</code></pre>
-  <p>Or to sample 42 dates:</p>
+  <p>Ou pour en générer 42 :</p>
   <pre><code class="language-php">$this->sampleMany($_date, 42)</code></pre>
   <p>Similarly, booleans, arrays, classes, colors, strings based on grammars
   etc. can be generated… but also validated! The <code>predicate</code>
