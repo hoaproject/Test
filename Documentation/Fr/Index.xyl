@@ -426,13 +426,13 @@ class Bar extends Test\Unit\Suite
   <pre><code class="language-php">$this->sample($_date)</code></pre>
   <p>Ou pour en générer 42 :</p>
   <pre><code class="language-php">$this->sampleMany($_date, 42)</code></pre>
-  <p>Similarly, booleans, arrays, classes, colors, strings based on grammars
-  etc. can be generated… but also validated! The <code>predicate</code>
-  asserter is a real one, contrary to <code>realdom</code>, <code>sample</code>
-  and <code>sampleMany</code>. By nature, it computes a boolean: Either
-  <code class="language-php">true</code> or
-  <code class="language-php">false</code>. It can be used on a realistic domain
-  disjunction, for instance:</p>
+  <p>De la même manière, des booléens, tableaux, classes, couleurs, chaînes basés
+  sur des grammaires etc. peuvent être générées… mais également validés !
+  Contrairement à <code>realdom</code>, <code>sample</code> et 
+  <code>sampleMany</code>, <code>predicate</code> est un vrai asserter. Par 
+  nature, il calcule un booléen : soit <code class="language-php">true</code> or 
+  <code class="language-php">false</code>. Il peut être utilisé sur une 
+  disjonction de domaine réaliste, par exemple :</p>
   <pre><code class="language-php">$this
     ->given(
         $_date = $this->realdom->date(
@@ -447,16 +447,15 @@ class Bar extends Test\Unit\Suite
     ->when($result = SUT::compute($stuff)
     ->then
         ->predicate($_date, $result);</code></pre>
-  <p>In the above example, the <code>_date</code> realistic domain is described,
-  not to generate a datum but to validate the result from the SUT.</p>
-  <p>To get more information about Grammar-based Testing, please, see
-  <a href="@hack:chapter=Compiler">the <code>Hoa\Compiler</code> library</a>.
-  To get more information about Solver-based Testing, please, see the
-  <a href="@hack:chapter=Realdom">the <code>Hoa\Realdom</code> library</a>. In
-  all cases, please, see <a href="#Research_papers">our research papers</a>.</p>
+  <p>Dans l'exemple ci-dessus, le domaine réaliste <code>_date</code> est décrit,
+  non pas pour générer une donnée, mais pour valider le résultat du SUT.</p>
+  <p>Pour obtenir plus d'informations concernant le Grammar-based Testing, voir 
+  la <a href="@hack:chapter=Realdom">bibliothèque <code>Hoa\Realdom</code></a>.
+  Dans tous les cas, veuillez consulter 
+  <a href="#Research_papers">nos études</a>.</p>
 
-  <h3 id="Automatically_generated_tests" for="main-toc">Automatically generated
-  tests</h3>
+  <h3 id="Automatically_generated_tests" for="main-toc">Tests générés 
+  automatiquement</h3>
 
   <p>This section has been addressed by a PhD thesis and several
   <a href="#Research_papers">research papers</a>. However, tools are not
