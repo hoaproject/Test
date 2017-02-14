@@ -23,19 +23,19 @@
         "source": "https://central.hoa-project.net/Resource/Library/Test"
     },
     "require": {
-        "atoum/atoum"               : "~3.0",
-        "atoum/praspel-extension"   : "~0.17",
-        "atoum/ruler-extension"     : "~1.3",
-        "atoum/visibility-extension": "~1.3",
-        "atoum/reports-extension"   : "~2.1",
-        "hoa/cli"                   : "~2.0",
-        "hoa/consistency"           : "~1.0",
-        "hoa/console"               : "~3.0",
-        "hoa/devtools"              : "~1.0",
-        "hoa/file"                  : "~1.0",
-        "hoa/kitab"                 : "~0.6",
-        "hoa/protocol"              : "~1.0",
-        "hoa/ustring"               : "~4.0"
+        "atoum/atoum"                : "~3.0",
+        "atoum/praspel-extension"    : "~0.17",
+        "atoum/ruler-extension"      : "~1.3",
+        "atoum/visibility-extension" : "~1.3",
+        "atoum/telemetry-extension"  : "~1.0",
+        "hoa/cli"                    : "~2.0",
+        "hoa/consistency"            : "~1.0",
+        "hoa/console"                : "~3.0",
+        "hoa/devtools"               : "~1.0",
+        "hoa/file"                   : "~1.0",
+        "hoa/kitab"                  : "~0.6",
+        "hoa/protocol"               : "~1.0",
+        "hoa/ustring"                : "~4.0"
     },
     "autoload": {
         "psr-4": {
