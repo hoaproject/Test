@@ -3,7 +3,7 @@
 
   <p>Assurer la <strong>qualité du logiciel</strong> n'est pas facile. La
   bibliothèque <code>Hoa\Test</code> fournit plusieurs outils pour écrire et
-  exécuter des tests, générer des données de tests ou même des tests eux-même
+  exécuter des tests, générer des données de tests ou même des tests eux-mêmes
   etc. Ceci est la base pour tester les bibliothèques de Hoa. Des articles de
   recherche ont été publiés et implémentés dans <code>Hoa\Test</code> et des
   bibliothèques connexes (comme <code>Hoa\Praspel</code>,
@@ -61,7 +61,7 @@
   automatiquement les tests (s'il vous plaît, allez voir la
   <a href="@hack:chapter=Praspel">bibliothèque <code>Hoa\Praspel</code></a> ou
   les rapports de recherches que nous avons publiés ci-dessous pour en apprendre
-  plus sur les paragdimes de <em lang="en">Design-by-Contract</em> et
+  plus sur les paradigmes de <em lang="en">Design-by-Contract</em> et
   <em lang="en">Contact-based Testing</em>).
   Les tests automatiques ont deux sous-catégories : les tests
   <strong>en ligne</strong> ou <strong>hors-ligne</strong>. En ligne signifie
@@ -113,7 +113,7 @@
   <strong>boite noire</strong>, <strong>unitaires</strong> et
   <strong>fonctionnels</strong>. Nous incluons également des tests de performance
   dans certaines bibliothèques.</p>
-  <p>Souvenez-vous que chaque point dans cet univers des tests peut impliquer
+  <p>Souvenez-vous que chaque point dans cet univers de tests peut impliquer
   différents outils et différentes pratiques de développement. Quand nous parlons
   de tests, il est important de garder ce schéma à l'esprit et de situer ou se
   trouve notre problématique.</p>
@@ -236,7 +236,7 @@ class Bar extends Test\Unit\Suite
   actuel. Dans le contexte d'un test unitaire, c'est une méthode ou une classe. 
   On peut également déclarer l'alias <code>CUT</code>, pour <em lang="en">Class Under Test</em>, 
   et <code>LUT</code> pour <em lang="en">Library Under Test</em>. <code>LUT</code> 
-  est utile si  nous devons accéder à d'autres classes de la même bibliothèque. 
+  est utile si nous devons accéder à d'autres classes de la même bibliothèque. 
   Etant donné que ce sont des tests unitaires, nous ne devons pas utiliser d'autres
   classes mais rappelez-vous qu'un case de test est composé d'un préambule et 
   qu'il doit être construit. Dans ce cas, <code>LUT</code> peut être défini comme
@@ -343,7 +343,7 @@ class Bar extends Test\Unit\Suite
                 ->isNotEmpty();
 }</code></pre>
   <p><a href="http://docs.atoum.org/en/latest/asserters.html">La liste de toutes
-  les assertions<a> peut être trouvée dans la documentation d'atoum. Même s'il 
+  les assertions</a> peut être trouvée dans la documentation d'atoum. Même s'il 
   est naturel d'écrire des assertions car elles sont proches des "conventions 
   humaines", il est parfois utile de découvrir qu'une assertion spécifique 
   existe déjà, comme par exemple <code>float->isNearlyEqualTo</code> qui compare 
@@ -356,7 +356,7 @@ class Bar extends Test\Unit\Suite
   <p><code>Hoa\Test</code> inclut 
   <a href="@central_resource:path=Contributions/Atoum/PraspelExtension">
   l'extension <code>Hoa\Praspel</code></a>. Cette extension inclut 
-  <a href="@hack:chapter=Praspel">la bibliothèque <code>Hoa\Praspel</code></a< 
+  <a href="@hack:chapter=Praspel">la bibliothèque <code>Hoa\Praspel</code></a> 
   et <a href="@hack:chapter=Realdom">la bibliothèque <code>Hoa\Realdom</code></a>
   dans atoum. Lors de tests manuels ou automatisés, cette extension peut être 
   utilisée pour <strong>générer automatiquement des données de test</strong>.</p>
@@ -366,7 +366,7 @@ class Bar extends Test\Unit\Suite
   <code>sample</code> (à l'interne c'est un <em>handler</em> mais la syntaxe est 
   la même) pour générer une valeur ou <code>sampleMany</code> pour générer 
   plusieurs valeurs. Par exemple, pour générer automatiquement des entiers dans 
-  l'interval 7 à 13 ou 42 à 153:</p>
+  l'intervalle 7 à 13 ou 42 à 153:</p>
   <pre><code class="language-php">public function case_sum()
 {
     $this
