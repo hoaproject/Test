@@ -718,18 +718,21 @@ $file  = new Hoa\File\ReadWrite('hoa://Test/Vfs/Foo?atime=' . $aTime);</code></p
 
   <h2 id="Conclusion" for="main-toc">Conclusion</h2>
 
-  <p>The <code>Hoa\Test</code> library is a set of tools to make <strong>white
-  box</strong> or <strong>black box</strong>, <strong>unit</strong> or
-  <strong>functional</strong>, <strong>automated</strong> and
-  <strong>automatic unit</strong> tests. This is more than a wrapper around
-  <a href="http://atoum.org/">atoum</a>: It provides a test structure and
-  conventions, a <strong>virtual file system</strong> and
-  <strong>extensions</strong> to <strong>automatically generate</strong> test
-  data, automatically generate tests or to get a powerful test
-  <strong>filtering</strong> system. Grammar-based Testing, Solver-based
-  Testing, Random-based Testing, Contract-based Testing… all these paradigms
-  live in <code>Hoa\Test</code>. Several <a href="#Research_papers">research
-  papers have been published</a> in major test literature and conferences.</p>
+  <p>La bibliothèque <code>Hoa\Test</code> est un ensemble d'outils permettant
+  de réaliser des tests <strong>unitaires</strong> ou
+  <strong>fonctionnels</strong>, <strong>automatisés</strong> ou
+  <strong>automatiques</strong>, soit en <strong>boîtes blanches</strong>, soit
+  en <strong>boîtes noires</strong>. Elle est plus qu'un wrapper autour d'<a
+  href="http://atoum.org/">atoum</a>: Elle fournit une structure de test et de
+  conventions, un <strong>système de fichiers virtuel</strong> et des
+  <strong>extensions</strong> pour <strong>générer automatiquement</strong> des
+  données de test, générer automatiquement des tests ou d'obtenir un puissant
+  système de <strong>filtrage</strong> de test.  Tests basés sur la grammaire,
+  tests basés sur le solveur, tests basés sur des résultats aléatoires, tests
+  basés sur des contrats… tous ces paradigmes se trouvent dans
+  <code>Hoa\Test</code>. Plusieurs <a href="#Research_papers">articles de
+  recherche ont été publiés</a> dans des publications et des conférences
+  importantes sur les tests.</p>
 
 </yield>
 </overlay>
