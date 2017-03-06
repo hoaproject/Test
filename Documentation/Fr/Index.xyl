@@ -690,9 +690,10 @@ var_dump($file->readAll());
 
   <h3 id="Permissions" for="main-toc">Permissions</h3>
 
-  <p>To change the permissions, either the specific stream permission functions
-  can be used or we can set them directly by using the
-  <code>permissions</code> query string followed by an octal value; thus:</p>
+  <p>Pour modifier les permissions, les fonctions d'autorisation de flux
+  spécifiques peuvent être utilisées ou nous pouvons les définir directement en
+  utilisant la chaîne de requête de <code>permissions</code> suivie d'une valeur octale;
+  Ainsi:</p>
   <pre><code class="language-php">$file = new Hoa\File\ReadWrite('hoa://Test/Vfs/Foo?permissions=0644');
 var_dump($file->getReadablePermissions());
 
@@ -700,10 +701,10 @@ var_dump($file->getReadablePermissions());
  * Will output:
  *     string(10) "-rw-r--r--"
  */</code></pre>
-  <p>As any query strings, we can concatenate key-values by using the
-  <code>&amp;amp;</code> symbol. For instance,
-  <code>type=directory&amp;amp;permissions=0644</code> represents a directory
-  with the <code>0644</code> permissions.</p>
+  <p>Comme toutes requêtes, nous pouvons concatener des clefs-valeurs en
+  utilisant le symbole <code>&amp;amp;</code>. Par exemple,
+  <code>type=directory&amp;amp;permissions=0644</code></p> représente un
+  répertoire avec les autorisations <code>0644</code>.</p>
 
   <h3 id="Access_change_and_modify_time" for="main-toc">Access-, change- and
   modify-time</h3>
