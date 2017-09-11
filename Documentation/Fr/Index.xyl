@@ -451,38 +451,40 @@ class Bar extends Test\Unit\Suite
   non pas pour générer une donnée, mais pour valider le résultat du SUT.</p>
   <p>Pour obtenir plus d'informations concernant le Grammar-based Testing, voir 
   la <a href="@hack:chapter=Realdom">bibliothèque <code>Hoa\Realdom</code></a>.
-  Dans tous les cas, veuillez consulter 
-  <a href="#Research_papers">nos études</a>.</p>
+  Dans tous les cas, veuillez consulter <a href="#Research_papers">nos études</a>.</p>
 
   <h3 id="Automatically_generated_tests" for="main-toc">Tests générés 
   automatiquement</h3>
 
-  <p>This section has been addressed by a PhD thesis and several
-  <a href="#Research_papers">research papers</a>. However, tools are not
-  stable yet and documentation is under-writing. Please, refer to
-  <a href="@hack:chapter=Praspel">the <code>Hoa\Praspel</code> library</a> to
-  get more information.</p>
+  <p>Cette section a été soutenue par une thèse de doctorat et plusieurs <a
+  href="#Research_papers">articles de recherches</a>. Cependant, ces outils ne
+  sont pas encore stable et la documentation est en cours d'écriture. Veuillez
+  vous référer à la <a href="@hack:chapter=Praspel">bibliothèque
+  <code>Hoa\Praspel</code></a> pour plus d'informations.</p>
 
-  <h2 id="Run_tests" for="main-toc">Run tests</h2>
+  <h2 id="Run_tests" for="main-toc">Exécuter les tests</h2>
 
-  <p>Most of the time, we will run tests from inside a library repository.
-  <a href="https://getcomposer.org/">Composer</a> will be required to install
-  dependencies of the library, which includes <code>Hoa\Test</code> as a
-  development dependency. Thus, from the root of the library repository:</p>
+  <p>La plupart du temps, nous exécutons les tests à partir du dépôt de la
+  bibliothèque. <a href="https://getcomposer.org/">Composer</a> est nécessaire
+  pour installer ses dépendances, ce qui inclu
+  <code>Hoa\Test</code> comme une dépendance de développement. Ainsi, à partir
+  de la racine du dépôt de la bibliothèque:</p>
   <pre><code class="language-shell">$ composer install</code></pre>
-  <p>By default it will install development dependencies. If not, force it by
-  adding the <code>--dev</code> option.</p>
-  <p>A <code>vendor/</code> directory is then created. Inside this directory, we
-  will find the <code>bin/hoa</code> command (please, see
-  <a href="@hack:chapter=Cli">the <code>Hoa\Cli</code> library</a>). Executing
-  this command without any option will list all available sub-commands for this
-  current installation. We should see the test commands. To execute tests, we
-  will use the <code>test:run</code> sub-command. We must provide the directory
-  where tests are stored, which is always <code>Test/</code>. Thus:</p>
+  <p>Par défaut, composer va installer les dépendances de développement. Sinon,
+  vous pouvez le forcer en ajoutant l'option <code>--dev</code>.</p>
+  <p>Un répertoire <code>vendor/</code> est ainsi créé. À l'intérieur de ce
+  répertoire, nous trouvons la commande <code>bin/hoa</code> (veuillez vous
+  référer à <a href="@hack:chapter=Cli">la bibliothèque
+  <code>Hoa\Cli</code></a>). Lancer cette commande sans aucune option va lister
+  toutes les sous-commandes disponible pour cette installation. Nous devrions
+  voir les commandes de tests. Pour les exécuter, nous allons utiliser la
+  sous-commande <code>test:run</code>. Nous devons fournir un répertoire où les
+  tests sont écrits, c'est toujours <code>Test/</code>. Ainsi: </p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --directories Test/</code></pre>
-  <p>Note that the <code>--directories</code> option has a plural form. This is
-  because we can specify more than one directory name by using a comma.</p>
-  <p>At this point, we will see test executing themselves.</p>
+  <p>Notez que l'option <code>--directories</code> a une forme plurielle. C'est
+  parce que l'on peut spécifier plus d'un répertoire, les noms devant être
+  séparés par une virgule.</p>
+  <p>À ce stade, nous verrons l'exécution des tests.</p>
 
   <h3 id="Interpreting_the_test_result" for="main-toc">Interpreting the test
   result</h3>
@@ -703,7 +705,7 @@ var_dump($file->getReadablePermissions());
  */</code></pre>
   <p>Comme toutes requêtes, nous pouvons concatener des clefs-valeurs en
   utilisant le symbole <code>&amp;amp;</code>. Par exemple,
-  <code>type=directory&amp;amp;permissions=0644</code></p> représente un
+  <code>type=directory&amp;amp;permissions=0644</code> représente un
   répertoire avec les autorisations <code>0644</code>.</p>
 
   <h3 id="Access_change_and_modify_time" for="main-toc">Access-, change- and
