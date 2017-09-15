@@ -466,7 +466,7 @@ class Bar extends Test\Unit\Suite
 
   <p>La plupart du temps, nous exécutons les tests à partir du dépôt de la
   bibliothèque. <a href="https://getcomposer.org/">Composer</a> est nécessaire
-  pour installer ses dépendances, ce qui inclu
+  pour installer ses dépendances, ce qui inclus
   <code>Hoa\Test</code> comme une dépendance de développement. Ainsi, à partir
   de la racine du dépôt de la bibliothèque:</p>
   <pre><code class="language-shell">$ composer install</code></pre>
@@ -486,33 +486,34 @@ class Bar extends Test\Unit\Suite
   séparés par une virgule.</p>
   <p>À ce stade, nous verrons l'exécution des tests.</p>
 
-  <h3 id="Interpreting_the_test_result" for="main-toc">Interpreting the test
-  result</h3>
+  <h3 id="Interpreting_the_test_result" for="main-toc">Interprété le résultat du test</h3>
 
-  <p>The CLI test reporter will use colours to indicate the <strong>test
-  verdict</strong>: green for success, red for fail or inconclusive. In case
-  of a success, we should see:</p>
+  <p>Le rapport de test en ligne de commande utilise des couleurs pour indiquer le <strong>
+  verdicte du test</strong>: vert pour un succès, rouge pour un échec ou non
+  concluant. Dans le cas d'un succès, nous devrions voir:</p>
+
   <pre><code>Success (<em>S</em> tests, <em>c</em>/<em>C</em> methods, <em>V</em> void method, <em>K</em> skipped method, <em>A</em> assertions)!</code></pre>
-  <p>where:</p>
+  <p>où:</p>
   <ul>
-    <li><code><em>S</em></code> is the number of test suites,</li>
-    <li><code><em>c</em></code> and <code><em>C</em></code> are the numbers of
-    test cases,</li>
-    <li><code><em>V</em></code> is the number of inconclusive test cases,</li>
-    <li><code><em>K</em></code> is the number of skipped test cases,</li>
-    <li><code><em>A</em></code> is the numbre of assertions.</li>
+    <li><code><em>S</em></code> est le nombre de suite de tests,</li>
+    <li><code><em>c</em></code> et <code><em>C</em></code> sont les nombres de
+    cas de tests,</li>
+    <li><code><em>V</em></code> est le nombre de cas de tests non concluant,</li>
+    <li><code><em>K</em></code> est le nombre de tests skipped,</li>
+    <li><code><em>A</em></code> est le nombre d'assertions.</li>
   </ul>
-  <p>In case of a failure, we should see:</p>
+  <p>Dans le cas d'un échec, nous devrions voir:</p>
   <pre><code>Failure (<em>S</em> tests, <em>c</em>/<em>C</em> methods, <em>V</em> void method, <em>K</em> skipped method, …, <em>F</em> failure, <em>E</em> error, <em>X</em> exception)!
 > There is <em>F</em> failure:
 …</code></pre>
   <ul>
-    <li><code><em>F</em></code> is the number of failed test cases,</li>
-    <li><code><em>E</em></code> is the number of unexpected errors,</li>
-    <li><code><em>X</em></code> is the number of unexpected exceptions.</li>
+    <li><code><em>F</em></code> est le nombre de cas de tests ayant échoués,</li>
+    <li><code><em>E</em></code> est le nombre d'erreurs inattendues,</li>
+    <li><code><em>X</em></code> est le nombre d'exceptions inattendues.</li>
   </ul>
-  <p>For each failure description, a “diff” will be computed, i.e. a textual
-  differential representation of what we expect and what we got.</p>
+  <p>Pour chaque description d'échecs, un “diff” va être calculé, i.e. Une
+  représentation différentielle textuelle de ce qui est attendue et de ce que
+  nous avons.</p>
 
   <h3 id="Debugging_mode" for="main-toc">Debugging mode</h3>
 
@@ -703,7 +704,7 @@ var_dump($file->getReadablePermissions());
  * Will output:
  *     string(10) "-rw-r--r--"
  */</code></pre>
-  <p>Comme toutes requêtes, nous pouvons concatener des clefs-valeurs en
+  <p>Comme toutes requêtes, nous pouvons concaténer des clefs-valeurs en
   utilisant le symbole <code>&amp;amp;</code>. Par exemple,
   <code>type=directory&amp;amp;permissions=0644</code> représente un
   répertoire avec les autorisations <code>0644</code>.</p>
