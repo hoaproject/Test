@@ -24,14 +24,14 @@
   <h3 id="Nature_of_tests" for="main-toc">Nature des tests</h3>
 
   <p>Un test est exécuté sur un <em lang="en">System Under Test</em>,
-  abrégé SUT, et est composé de deux parties :</p>
+  abrégé SUT, et est composé de deux parties :</p>
   <ol>
-    <li>les <strong>données de test</strong> pour exécuter le SUT ; et</li>
+    <li>les <strong>données de test</strong> pour exécuter le SUT ; et</li>
     <li>un <strong>oracle</strong>, qui établit le
-    <strong>verdict du test</strong> : est-ce que les résultats de l'exécution et
-    l'état du SUT après son exécution sont ceux que nous attendions ou pas ?</li>
+    <strong>verdict du test</strong> : est-ce que les résultats de l'exécution et
+    l'état du SUT après son exécution sont ceux que nous attendions ou pas ?</li>
   </ol>
-  <p>Les valeurs du verdict sont : <strong>succès</strong>,
+  <p>Les valeurs du verdict sont : <strong>succès</strong>,
   <strong>échec</strong> ou <strong>non conclusif</strong>. Un succès signifie
   que c'est ce que nous attendions, un échec signifie que ce n'est pas ce que nous
   attendions et non conclusif signifie qu'il n'est pas possible de donner une réponse.
@@ -63,7 +63,7 @@
   les rapports de recherches que nous avons publiés ci-dessous pour en apprendre
   plus sur les paradigmes de <em lang="en">Design-by-Contract</em> et
   <em lang="en">Contact-based Testing</em>).
-  Les tests automatiques ont deux sous-catégories : les tests
+  Les tests automatiques ont deux sous-catégories : les tests
   <strong>en ligne</strong> ou <strong>hors-ligne</strong>. En ligne signifie
   que  les tests sont générés et exécutés en une seule passe, tandis que
   hors-ligne signifie que les tests sont générés et exécutés plus tard
@@ -72,7 +72,7 @@
   <p>Dans Hoa nous avons aussi bien des tests <strong>automatisés</strong> que
   des tests <strong>hors-ligne automatiques</strong>.</p>
   <p>Ceci est une classification générale des tests. Une plus précise est décrite
-  par le schéma ci-dessous qui explique quel type de test écrire :</p>
+  par le schéma ci-dessous qui explique quel type de test écrire :</p>
   <figure>
     <object
       type="image/svg+xml"
@@ -82,7 +82,7 @@
     3 axis.</figcaption>
   </figure>
   <p>L'axe "Support de conception" décrit la <strong>visibilité</strong> que nous
-  avons sur le <em lang="en">System Under Test</em> : soit
+  avons sur le <em lang="en">System Under Test</em> : soit
   <strong>boite noire</strong> ou <strong>boite blanche</strong>. Leurs
   significations sont différentes suivant le contexte mais nous pouvons
   considérer un système comme une boite blanche si nous regardons et utilisons
@@ -95,15 +95,15 @@
   totalement différente. Nous n'attendons pas la même chose d'un système boite
   noire ou boite blanche.</p>
   <p>L'axe "Taille du système" décrit à quel <strong>niveau</strong> (ou altitude)
-  nous testons : du plus bas, <strong>unitaire</strong> (une fonction ou une
+  nous testons : du plus bas, <strong>unitaire</strong> (une fonction ou une
   méthode) au plus haut, tout le <strong>système</strong>, ce qui inclut les
   <strong>composants</strong> (ensemble de fonctions) et
   l'<strong>intégration</strong> des composants dans d'autres composants, qui,
-  ensemble, forment le système. Tous les niveaux sont important : ce n'est pas
+  ensemble, forment le système. Tous les niveaux sont important : ce n'est pas
   parce qu'une fontion fait ce qu'elle est supposée faire qu'elle s'intégrera
   correctement avec une autre.</p>
 
-  <p>Enfin, l'axe "Type de test" décrit l'<strong>objectif</strong> des tests :
+  <p>Enfin, l'axe "Type de test" décrit l'<strong>objectif</strong> des tests :
   <strong>fonctionnel</strong> (“tout fonctionne comme prévu et c'est
   tout“), <strong>robustesse</strong> (“il n'est pas possible de mettre
   le système dans un état d'erreur si nous faisons quelque chose d'imprévu“),
@@ -126,22 +126,22 @@
   appelés entrées) d'un SUT. Un <strong>scénario de test</strong> est une paire
   composée d'un état (le contexte dans lequel est exécuté le test) et un test.
   Une <strong>suite de test</strong> est ensemble de scénario de test. Par
-  conséquent, il y a deux états du point du vue du test : un
+  conséquent, il y a deux états du point du vue du test : un
   <strong>pré-état</strong> — avant l'exécution du SUT — et un
   <strong>post-état</strong> — après l'exécution —.</p>
-  <p>Construire le pré-état est critique : le but est de mettre le SUT dans un
+  <p>Construire le pré-état est critique : le but est de mettre le SUT dans un
   (pré-)état spécifique afin de le tester. La partie du scénario de test responsable
   de créer le pré-état est appelé le <strong>préambule</strong>. Ainsi, le
   préambler est le code qui met le SUT dans un état spécifique.</p>
-  <p>Ainsi, en écrivant un scénario de test, nous aurons 3 éléments à considérer :</p>
+  <p>Ainsi, en écrivant un scénario de test, nous aurons 3 éléments à considérer :</p>
   <ol>
-    <li>Le <strong>préambule</strong>, pour mettre le SUT dans un état spécifique ;</li>
-    <li>L'<strong>exécution</strong>, pour exécuter le SUT et obtenir un résultat ;</li>
+    <li>Le <strong>préambule</strong>, pour mettre le SUT dans un état spécifique ;</li>
+    <li>L'<strong>exécution</strong>, pour exécuter le SUT et obtenir un résultat  ;</li>
     <li>L'<strong>oracle</strong>, pour évaluer le verdict (basé sur le résultat
     de l'exécution et le post-état).</li>
   </ol>
-  <p>L'oracle consiste en une séquence d'assertions : “Est-ce que cette valeur
-  est égale à… ?”, “Est-ce que la valeur a changé de cette façon… ?” etc. Il
+  <p>L'oracle consiste en une séquence d'assertions : “Est-ce que cette valeur
+  est égale à… ?”, “Est-ce que la valeur a changé de cette façon… ?” etc. Il
   est censé pouvoir vérifier la forme de certaines données mais également
   comparer des données entre le pré et le post-état.</p>
   <p>Dans un scénario de test, nous représentons et introduisons le préambule,
@@ -181,19 +181,19 @@
 
   <p>Plusieurs <strong>études</strong> (articles, journaux et une thèse de
   doctorat) ont été publiées à propos de <code>Hoa\Test</code>,
-  <code>Hoa\Praspel</code> et <code>Hoa\Realdom</code>:</p>
+  <code>Hoa\Praspel</code> et <code>Hoa\Realdom</code> :</p>
   <ul>
     <li><cite>A Constraint Solver for PHP Arrays</cite>, présenté à
     <a href="http://cstva2013.univ-fcomte.fr/">CSTVA 2013</a> (Luxembourg,
     Luxembourg), <a href="@research:article=Cstva13">article</a>,
     <a href="@keynote:keynote=Cstva13/EGB13.pdf">présentation</a> et
-    <a href="@event:event=Cstva13">détails</a> ;</li>
+    <a href="@event:event=Cstva13">détails</a> ;</li>
     <li><cite>Grammar-Based Testing using Realistic Domains in PHP</cite>,
     présenté à
     <a href="https://sites.google.com/site/amost2012/">A-MOST 2012</a>
     (Montréal, Canada), <a href="@research:article=Amost12">article</a>,
     <a href="@keynote:keynote=Amost12/EDGB12.pdf">présentation</a> et
-    <a href="@event:event=Amost12">détails</a> ;</li>
+    <a href="@event:event=Amost12">détails</a> ;</li>
     <li><cite>Praspel: A Specification Language for Contract-Driven Testing in
     PHP</cite>, présenté à <a href="http://ictss2011.lri.fr/">ICTSS
     2011</a> (Paris, France), <a href="@research:article=Ictss11">article</a> et
@@ -219,7 +219,7 @@
   classe. Un cas de test est une méthode de cette classe qui exprime le préambule,
   l'exécution du SUT et l'oracle. Le modèle d'une suite de test est le suivant
   (supposons la suite de test <code>Test/Unit/Bar.php</code> de la bibliothèque
-  <code>Hoa\Foo</code>) :</p>
+  <code>Hoa\Foo</code>) :</p>
   <pre><code class="language-php">namespace Hoa\Foo\Test\Unit;
 
 use Hoa\Foo\Bar as SUT;
@@ -249,7 +249,7 @@ class Bar extends Test\Unit\Suite
   Elles  doivent être préfixées par <code>case_</code>. Un cas de test doit 
   suivre la structure préambule, exécution et oracle, représentés respectivement 
   par les mots clés <code>given</code>, <code>when</code> et <code>then</code>. 
-  Un cas de test doit donc être écrit de la manière suivante :</p>
+  Un cas de test doit donc être écrit de la manière suivant  :</p>
   <pre><code class="language-php">public function case_classic()
 {
     $this
@@ -269,7 +269,7 @@ class Bar extends Test\Unit\Suite
   des appels de fonction avec une arité non-liée. Ce sont des méthodes vides, 
   elles ne font rien. Le but n'est pas de leur passer quelque chose mais de 
   déclarer des variables pour établir le préambule et exécuter le test. Par 
-  exemple :</p> 
+  exemple :</p> 
   <pre><code class="language-php">public function case_sum()
 {
     $this
@@ -284,7 +284,7 @@ class Bar extends Test\Unit\Suite
             ->integer($result)
                 ->isEqualTo(3);
 }</code></pre>
-  <p>Ceci est strictement équivalent à écrire :</p>
+  <p>Ceci est strictement équivalent à écrire :</p>
   <pre><code class="language-php">public function case_sum()
 {
     // Given:
@@ -297,14 +297,14 @@ class Bar extends Test\Unit\Suite
 }</code></pre>
   <p>Nous utilisons toutefois la première forme qui est plus claire, l'indentation
   et les mots clés spéciaux (au travers des noms de méthodes) nous forcent à 
-  séparer clairement les 3 parties : préambule, exécution du test et oracle.</p>
+  séparer clairement les 3 parties : préambule, exécution du test et oracle.</p>
   <p>La variable <code class="language-php">$result</code> est spéciale. Elle 
   doit toujours <strong>contenir le résultat</strong> de l'exécution du test, 
   i.e. le résultat de la déclaration <code class="language-php">return</code> 
   du SUT. Ceci est une <strong>convention</strong>.</p> 
   <p>Un cas de test peut contenir plusieurs exécutions avec des oracles multiples
   (par exemple si un SUT retourne différent résultats en fonction du temps). 
-  Ainsi, le cas de test doit être écrit comme ceci :</p>
+  Ainsi, le cas de test doit être écrit comme ceci :</p>
   <pre><code class="language-php">public function case_classic()
 {
     $this
@@ -324,7 +324,7 @@ class Bar extends Test\Unit\Suite
   <p>Les assertions sont toujours utilisées après la partie <code>then</code> et
   ont la plupart du temps la forme 
   <code><em>assertion-groupe</em>-><em>assertion</em></code>. Nous pouvons 
-  également lier des groupes d'assertions. Par exemple :</p>
+  également lier des groupes d'assertions. Par exemple :</p>
   <pre><code class="language-php">public function case_sum()
 {
     $this
@@ -348,7 +348,7 @@ class Bar extends Test\Unit\Suite
   humaines", il est parfois utile de découvrir qu'une assertion spécifique 
   existe déjà, comme par exemple <code>float->isNearlyEqualTo</code> qui compare 
   2 flottants comme prévu la plupart du temps. N'hésitez pas à consulter la 
-  documentation d'atoum régulièrement !</p>
+  documentation d'atoum régulièrement !</p>
 
   <h4 id="Automatic_test_data_generation" for="main-toc">Génération automatique 
   des données de test</h4>
@@ -366,7 +366,7 @@ class Bar extends Test\Unit\Suite
   <code>sample</code> (à l'interne c'est un <em>handler</em> mais la syntaxe est 
   la même) pour générer une valeur ou <code>sampleMany</code> pour générer 
   plusieurs valeurs. Par exemple, pour générer automatiquement des entiers dans 
-  l'intervalle 7 à 13 ou 42 à 153:</p>
+  l'intervalle 7 à 13 ou 42 à 153 :</p>
   <pre><code class="language-php">public function case_sum()
 {
     $this
@@ -384,7 +384,7 @@ class Bar extends Test\Unit\Suite
           ->…;
 }</code></pre>
   <p>Actuellement, <code>atoum/praspel-extension</code> fournit 3 asserters pour 
-  générer des données et 1 asserter pour les valider :</p>
+  générer des données et 1 asserter pour les valider :</p>
   <ol>
     <li><code>realdom</code> pour créer une disjonction de domaine réaliste 
     (<code>or</code> dans l'exemple précédent),</li>
@@ -400,7 +400,7 @@ class Bar extends Test\Unit\Suite
   Ainsi, nous sommes capable de <strong>générer automatiquement</strong> ou 
   <strong>valider</strong> une donnée qui <strong>correspond à une expression 
   régulière</strong>. L'exemple suivant génère une chaîne similaire à une 
-  adresse email :</p>
+  adresse email :</p>
   <pre><code class="language-php">$this
     ->given(
         $email = $this->sample(
@@ -410,7 +410,7 @@ class Bar extends Test\Unit\Suite
     )
     ->…</code></pre>
   <p>L'exemple ci-dessous déclare un domaine réaliste qui représente une date 
-  avec le format <code>d/m H:i</code>, entre hier et lundi prochain :</p>
+  avec le format <code>d/m H:i</code>, entre hier et lundi prochain :</p>
   <pre><code class="language-php">$this
     ->given(
         $_date = $this->realdom->date(
@@ -422,17 +422,17 @@ class Bar extends Test\Unit\Suite
         )
     )
     ->…</code></pre>
-  <p>Ensuite, pour générer une date :</p>
+  <p>Ensuite, pour générer une date :</p>
   <pre><code class="language-php">$this->sample($_date)</code></pre>
-  <p>Ou pour en générer 42 :</p>
+  <p>Ou pour en générer 42 :</p>
   <pre><code class="language-php">$this->sampleMany($_date, 42)</code></pre>
   <p>De la même manière, des booléens, tableaux, classes, couleurs, chaînes basés
-  sur des grammaires etc. peuvent être générées… mais également validés !
+  sur des grammaires etc. peuvent être générées… mais également validés !
   Contrairement à <code>realdom</code>, <code>sample</code> et 
   <code>sampleMany</code>, <code>predicate</code> est un vrai asserter. Par 
-  nature, il calcule un booléen : soit <code class="language-php">true</code> or 
+  nature, il calcule un booléen : soit <code class="language-php">true</code> or 
   <code class="language-php">false</code>. Il peut être utilisé sur une 
-  disjonction de domaine réaliste, par exemple :</p>
+  disjonction de domaine réaliste, par exemple :</p>
   <pre><code class="language-php">$this
     ->given(
         $_date = $this->realdom->date(
@@ -468,7 +468,7 @@ class Bar extends Test\Unit\Suite
   bibliothèque. <a href="https://getcomposer.org/">Composer</a> est nécessaire
   pour installer ses dépendances, ce qui inclus
   <code>Hoa\Test</code> comme une dépendance de développement. Ainsi, à partir
-  de la racine du dépôt de la bibliothèque:</p>
+  de la racine du dépôt de la bibliothèque :</p>
   <pre><code class="language-shell">$ composer install</code></pre>
   <p>Par défaut, composer va installer les dépendances de développement. Sinon,
   vous pouvez le forcer en ajoutant l'option <code>--dev</code>.</p>
@@ -479,7 +479,7 @@ class Bar extends Test\Unit\Suite
   toutes les sous-commandes disponible pour cette installation. Nous devrions
   voir les commandes de tests. Pour les exécuter, nous allons utiliser la
   sous-commande <code>test:run</code>. Nous devons fournir un répertoire où les
-  tests sont écrits, c'est toujours <code>Test/</code>. Ainsi: </p>
+  tests sont écrits, c'est toujours <code>Test/</code>. Ainsi : </p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --directories Test/</code></pre>
   <p>Notez que l'option <code>--directories</code> a une forme plurielle. C'est
   parce que l'on peut spécifier plus d'un répertoire, les noms devant être
@@ -489,11 +489,11 @@ class Bar extends Test\Unit\Suite
   <h3 id="Interpreting_the_test_result" for="main-toc">Interprété le résultat du test</h3>
 
   <p>Le rapport de test en ligne de commande utilise des couleurs pour indiquer le <strong>
-  verdicte du test</strong>: vert pour un succès, rouge pour un échec ou non
-  concluant. Dans le cas d'un succès, nous devrions voir:</p>
+  verdicte du test</strong> : vert pour un succès, rouge pour un échec ou non
+  concluant. Dans le cas d'un succès, nous devrions voir :</p>
 
   <pre><code>Success (<em>S</em> tests, <em>c</em>/<em>C</em> methods, <em>V</em> void method, <em>K</em> skipped method, <em>A</em> assertions)!</code></pre>
-  <p>où:</p>
+  <p>où :</p>
   <ul>
     <li><code><em>S</em></code> est le nombre de suite de tests,</li>
     <li><code><em>c</em></code> et <code><em>C</em></code> sont les nombres de
@@ -502,7 +502,7 @@ class Bar extends Test\Unit\Suite
     <li><code><em>K</em></code> est le nombre de tests skipped,</li>
     <li><code><em>A</em></code> est le nombre d'assertions.</li>
   </ul>
-  <p>Dans le cas d'un échec, nous devrions voir:</p>
+  <p>Dans le cas d'un échec, nous devrions voir :</p>
   <pre><code>Failure (<em>S</em> tests, <em>c</em>/<em>C</em> methods, <em>V</em> void method, <em>K</em> skipped method, …, <em>F</em> failure, <em>E</em> error, <em>X</em> exception)!
 > There is <em>F</em> failure:
 …</code></pre>
@@ -515,16 +515,16 @@ class Bar extends Test\Unit\Suite
   représentation différentielle textuelle de ce qui est attendue et de ce que
   nous avons.</p>
 
-  <h3 id="Debugging_mode" for="main-toc">Debugging mode</h3>
+  <h3 id="Debugging_mode" for="main-toc">Mode debug</h3>
 
-  <p>In some cases it is possible that debugging information are accessible but
-  hidden for a regular running. To enable the outputs, we need to use the
-  <code>--debug</code> option; thus:</p>
+  <p>Dans certains cas, il est possible que certaines informations de debug
+  soient accessibles mais cachées lors d'une exécution des tests classique.
+  Pour activer cette sortie, nous devons utiliser l'option
+  <code>--debug</code> ; Ainsi :</p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --directories Test/ --debug</code></pre>
-  <p>The order of the option does not matter, as usual with the <code>hoa</code>
-  command.</p>
-  <p>To produce a debugging information, we should use the <code>dump</code>
-  handler while writing the test case. For instance:</p>
+  <p>L'ordre des options importe peu, comme toujours avec la commande <code>hoa</code>.</p>
+  <p>Pour produire les informations de debug, nous devons utiliser l'instruction <code>dump</code>
+  lors de l'écriture de notre cas de test. Par exemple :</p>
   <pre data-line="12"><code class="language-php">public function case_sum()
 {
     $this
@@ -695,8 +695,8 @@ var_dump($file->readAll());
 
   <p>Pour modifier les permissions, les fonctions d'autorisation de flux
   spécifiques peuvent être utilisées ou nous pouvons les définir directement en
-  utilisant la chaîne de requête de <code>permissions</code> suivie d'une valeur octale;
-  Ainsi:</p>
+  utilisant la chaîne de requête de <code>permissions</code> suivie d'une valeur octale ;
+  Ainsi :</p>
   <pre><code class="language-php">$file = new Hoa\File\ReadWrite('hoa://Test/Vfs/Foo?permissions=0644');
 var_dump($file->getReadablePermissions());
 
@@ -727,7 +727,7 @@ $file  = new Hoa\File\ReadWrite('hoa://Test/Vfs/Foo?atime=' . $aTime);</code></p
   <strong>fonctionnels</strong>, <strong>automatisés</strong> ou
   <strong>automatiques</strong>, soit en <strong>boîtes blanches</strong>, soit
   en <strong>boîtes noires</strong>. Elle est plus qu'un wrapper autour d'<a
-  href="http://atoum.org/">atoum</a>: Elle fournit une structure de test et de
+  href="http://atoum.org/">atoum</a> : Elle fournit une structure de test et de
   conventions, un <strong>système de fichiers virtuel</strong> et des
   <strong>extensions</strong> pour <strong>générer automatiquement</strong> des
   données de test, générer automatiquement des tests ou d'obtenir un puissant
