@@ -541,50 +541,49 @@ class Bar extends Test\Unit\Suite
                 ->isEqualTo(3);
 }</code></pre>
 
-  <h3 id="Select_tests_to_run" for="main-toc">Select tests to run</h3>
+  <h3 id="Select_tests_to_run" for="main-toc">Sélectionnez les tests à exécuter</h3>
 
-  <p>Selecting tests to run enables a <strong>faster feedback</strong> and a
-  <strong>shorter “test loop”</strong>. We previously saw the
-  <code>--directories</code> option to pick some directories: Either the test
-  root directory <code>Test/</code> or one or many sub-directories (with
-  <code>--directories Test/Foo/,Test/Bar/,Test/Baz/Qux/</code> for
-  instance).</p>
-  <p>We also have the <code>--files</code> option to select one or many
-  specific <strong>files to run</strong>. For instance:</p>
+  <p>Sélectionnez les tests à exécuter permet un <strong>retour rapide</strong>
+  et une plus <strong>courte “boucle de test”</strong>.  Nous avons vu
+  précédemment l'option <code>--directories</code> pour définir certains
+  répertoires : Soit le répertoire racine <code>Test</code>, soit un ou plusieurs
+  sous-répertoire (avec <code>--directories
+  Test/Foo/,Test/Bar/,Test/Baz/Qux/</code> par exemple)</p>
+  <p>Nous avons aussi l'option <code>--files</code> pour sélectionner un ou
+  plusieurs <strong>fichiers à exécuter</strong> spécifique. Par exemple :</p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --files Test/Unit/Foo.php,Test/Unit/Bar.php</code></pre>
-  <p>Finally, <code>Hoa\Test</code> requires
-  <a href="https://github.com/atoum/ruler-extension">the
-  <code>atoum/ruler-extension</code> extension</a> to be installed. This
-  extension allows to precisely <strong>filter</strong> tests to run. We
-  access to it with the <code>--filter</code> option followed by an
-  <strong>expression</strong>. Fun fact: Expressions are based on
-  <a href="@hack:chapter=Ruler">the <code>Hoa\Ruler</code> library</a>!</p>
-  <p>The following variables are available in a filter expression:</p>
+  <p>Finalement, <code>Hoa\Test</code> nécessite l'installation de l'extension <a href="https://github.com/atoum/ruler-extension">
+  <code>atoum/ruler-extension</code></a>. Cette extension permet de
+  <strong>filtrer</strong> précisément les tests à lancer.  Nous y accédons
+  avec l'option <code>--filter</code> suivie par une <strong>expression</strong>.
+  Anecdote : Les expressions sont basées sur <a href="@hack:chapter=Ruler">la bibliothèque <code>Hoa\Ruler</code></a>!</p>
+  <p>Les variables suivantes sont disponibles dans l'<strong>expression</strong> du filtre :</p>
   <ul>
-    <li><code>method</code> represents the test case name,</li>
-    <li><code>class</code> represents the test suite name,</li>
-    <li><code>namespace</code> represents the test suite namespace,</li>
-    <li><code>tags</code> represents test suite or test case's tags.</li>
+    <li><code>method</code> représente le nom du cas de test,</li>
+    <li><code>class</code> représente le nom de la suite de test,</li>
+    <li><code>namespace</code> représente l'espace de nom de la suite de test,</li>
+    <li><code>tags</code> représente la suite de test ou le label du cas de test.</li>
   </ul>
-  <p>All standard operators from the <code>Hoa\Ruler</code> library can be used.
-  So for instance, to only run the <code>Hoa\Foo\Test\Unit\Bar</code> test
-  suite, which is represented by a class, we will write:</p>
+  <p>Tous les opérateurs standards de la bibliothèque <code>Hoa\Ruler</code>
+  peuvent être utilisés. Par exemple, pour lancer uniquement la suite de test
+  <code>Hoa\Foo\Test\Unit\Bar</code> qui est représentée par une classe, nous
+  écrirons :</p>
   <pre><code clas="language-shell">$ vendor/bin/hoa test:run --directories Test/ --filter 'class = "Hoa\Foo\Test\Unit\Bar"'</code></pre>
-  <p>Or, to run only two specific test cases, let's say
-  <code>case_sum</code> and <code>case_baz</code>:</p>
+  <p>Ou, pour lancer uniquement deux cas de tests spécifiques, supposons
+  <code>case_sum</code> et <code>case_baz</code> :</p>
   <pre><code clas="language-shell">$ vendor/bin/hoa test:run --directories Test/ --filter 'method = "case_sum" or method = "case_baz"'</code></pre>
-  <p>The previous example is strictly equivalent to:</p>
+  <p>L'exemple précédent est strictement équivalent à :</p>
   <pre><code clas="language-shell">$ vendor/bin/hoa test:run --directories Test/ --filter 'method in ["case_sum", "case_baz"]'</code></pre>
-  <p>Another example to filter by test suites' name: Only the ones that end by
-  <code>Qux</code>:</p>
+  <p>Un autre exemple de filtre pour les suites de tests : Seulement ceux terminant par
+  <code>Qux</code> :</p>
   <pre><code clas="language-shell">$ vendor/bin/hoa test:run --directories Test/ --filter 'class matches "Qux$"'</code></pre>
-  <p>The <code>matches</code> operator requires a regular expression to
-  <a href="http://pcre.org/">the PCRE format</a>.</p>
-  <p>Finally, test suites and test cases can hold one or more tags, thanks to the
-  <code>@tags</code> annotation. An annotation is a comment of kind <code>/**
-  <em>…</em> */</code> located on top of a class, interface, method,
-  function etc. Tags allow to have a transversal classification of test cases.
-  For instance:</p>
+  <p>L'opérateur <code>matches</code> nécessite une expression régulière respectant
+  <a href="http://pcre.org/">le format PCRE</a>.</p>
+  <p>Finalement, les cas de tests et les suites de tests peuvent avoir un ou plusieurs labels, merci à l'annotation
+  <code>@tags</code>. Une annotation est un commentaire du genre <code>/**
+  <em>…</em> */</code> localisé au dessus d'une classe, interface, méthode,
+  fonction etc. Les labels permettent d'avoir une classification des cas de
+  tests. Par exemple :</p>
   <pre><code class="language-php">/**
  * @tags featureA featureB
  */
@@ -592,11 +591,11 @@ public function case_sum()
 {
     // …
 }</code></pre>
-  <p>To run only test cases with the tag <code>featureA</code>, we will use the
-  following command-line:</p>
+  <p>Pour lancer uniquement les cas de tests avec le label <code>featureA</code>,
+  nous allons utiliser la ligne de commande suivante :</p>
   <pre><code clas="language-shell">$ vendor/bin/hoa test:run --directories Test/ --filter '"featureA" in tags'</code></pre>
-  <p>Here, the variable <code>tags</code> contains an array of strings,
-  representing tag names.</p>
+  <p>Ici, la variable <code>tags</code> contient un tableau de chaines
+  représentant les noms des labels.</p>
 
   <h3 id="Choose_the_PHP_virtual_machine" for="main-toc">Choose the PHP virtual
   machine</h3>
