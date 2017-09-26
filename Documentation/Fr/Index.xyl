@@ -617,36 +617,39 @@ public function case_sum()
   <a href="https://github.com/php/php-langspec">the PHP specification</a> as
   most as possible.</p>
 
-  <h3 id="Test_execution_engine" for="main-toc">Test execution engine</h3>
+  <h3 id="Test_execution_engine" for="main-toc">Moteur d'exécution des tests</h3>
 
-  <p>atoum provides several test execution engines, such as:</p>
+  <p>atoum fournit plusieurs moteurs d'exécution de test, tels que :</p>
   <ul>
-    <li><strong>Inline</strong>, one test case after another in the same
-    process,</li>
-    <li><strong>Isolate</strong>, one test case after another but each time in a
-    new process,</li>
-    <li><strong>Concurrent</strong>, “all” test cases at the same time in
-    separated processes.</li>
+    <li><strong>Inline</strong>, un cas de test après un autre dans le même
+    processus,</li>
+    <li><strong>Isolate</strong>, un cas de test après un autre mais à chaque fois
+    dans un nouveau processus,</li>
+    <li><strong>Concurrent</strong>, “tous” les cas de tests en même temps dans des
+    processus séparés.</li>
   </ul>
-  <p>When running tests, isolation is really important: No memory conflict, no
-  execution conflict, state of the System Under Test is reset each time etc.
-  The test verdict does not depend of a previous run and is therefore
-  <strong>deterministic</strong> and <strong>unambiguous</strong> (also if the
-  SUT is).</p>
-  <p>By default, <code>Hoa\Test</code> will use the <strong>concurrent</strong>
-  test execution engine. All test cases are not executed at the same time; in
-  fact the number of test cases to run is defined by the number of processes to
-  use. By default, this is either 2 or 4 depending of the platform but we can
-  specify it by using the <code>--concurrent-processes</code> option. Thus, to
-  force using 1024 processes to run tests (assuming we have a monster
-  computer):</p>
+  <p>Lorsque nous exécutons les tests, l'isolation est vraiment importante :
+  Pas de conflit de mémoire, pas de conflit d'exécution, l'état du SUT est
+  réinitialisé à chaque fois etc.
+  Le verdict du test ne dépend pas de l'exécution précédente et par conséquent
+  <strong>déterministe</strong> et <strong>non ambigu</strong> (seulement si le
+  SUT l'est).</p>
+  <p>Par defaut, <code>Hoa\Test</code> va utiliser le moteur d'exécution de
+  test <strong>concurrent</strong>. Tous les cas de tests ne snt pas exécuté au
+  même moment ; in en fait le nombre de cas de tests à exécuter sont défini par
+  le nombre de processus utilisés.  Par defaut, c'est soit 2 ou 4 dependant de
+  la platforme mais nous pouvons le spécifier avec l'option
+  <code>--concurrent-processes</code>.
+  Ainsi, pour forcer l'utilisation de 1024 processus pour lancer les tests
+  (supposant que nous ayons un serveur monstre) :</p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --directories Test/ --concurrent-processes 1024</code></pre>
-  <p>Because the inline test execution engine is not interesting for Hoa's
-  usecases and contexts and because the isolate test execution engine has more
-  cons than pros compared to the concurrent one (mainly the latter is faster
-  than the former), we cannot change the test execution engine. However, to
-  emulate the isolate test engine, we could force
-  <code>--concurrent-processes</code> to 1.</p>
+  <p>Parce que les tests <strong>inline</strong> ne sont pas intéressants pour
+  les cas de tests et le contexte de Hoa et parce que l'isolation du moteur
+  d'exécution des tests a plus de contre que de pour comparé au mode concurrent
+  (principalement ce dernier est plus rapide que le premier), nous ne pouvons
+  changer le moteur d'exécution des tests. Cependant, pour simuler le moteur
+  d'exécution isolé, nous pouvons forcer <code>--concurrent-processes</code> à
+  1.</p>
 
   <h2 id="Virtual_file_system" for="main-toc">Virtual file system</h2>
 
