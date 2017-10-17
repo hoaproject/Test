@@ -55,7 +55,7 @@
   test sont calculés par la machine. C'est le rôle des frameworks « xUnit » tel
   que <a href="http://atoum.org/">atoum</a> ou
   <a href="http://phpunit.de/">PHPUnit</a>. L'ingénieur utilisera les frameworks
-  pour écrire des tests et la machine pour les exécuter. Finalement les tests
+  pour écrire des tests et la machine pour les exécuter. Finalement, les tests
   <strong>automatiques</strong> sont générés et exécutés par la machine.
   La machine peut compter sur une spécification, comme un contrat, pour générer
   automatiquement les tests (s'il vous plaît, allez voir la
@@ -99,8 +99,8 @@
   méthode) au plus haut, tout le <strong>système</strong>, ce qui inclut les
   <strong>composants</strong> (ensemble de fonctions) et
   l'<strong>intégration</strong> des composants dans d'autres composants, qui,
-  ensemble, forment le système. Tous les niveaux sont important : ce n'est pas
-  parce qu'une fontion fait ce qu'elle est supposée faire qu'elle s'intégrera
+  ensemble, forment le système. Tous les niveaux sont importants : ce n'est pas
+  parce qu'une fonction fait ce qu'elle est supposée faire qu'elle s'intégrera
   correctement avec une autre.</p>
 
   <p>Enfin, l'axe "Type de test" décrit l'<strong>objectif</strong> des tests :
@@ -126,7 +126,7 @@
   appelés entrées) d'un SUT. Un <strong>scénario de test</strong> est une paire
   composée d'un état (le contexte dans lequel est exécuté le test) et un test.
   Une <strong>suite de test</strong> est ensemble de scénario de test. Par
-  conséquent, il y a deux états du point du vue du test : un
+  conséquent, il y a deux états du point de vue du test : un
   <strong>pré-état</strong> — avant l'exécution du SUT — et un
   <strong>post-état</strong> — après l'exécution —.</p>
   <p>Construire le pré-état est critique : le but est de mettre le SUT dans un
@@ -153,14 +153,14 @@
   <p>Hoa n'a pas développé son propre framework de tests pour plusieurs raisons.
   La raison principale étant que c'est une tâche laborieuse. Cela implique plus
   de développement, plus d'outils à maintenir, moins de gens concentrés sur Hoa
-  etc. A la place, nous préférons choisir un bon projet sur lequel nous
+  etc. À la place, nous préférons choisir un bon projet sur lequel nous
   appuyer et y contribuer. Nous avons opté pour <a href="http://atoum.org/">atoum</a>,
   <q>“un framework de test simple, moderne et intuitif”</q>.</p>
   <p>Ainsi, la bibliothèque <code>Hoa\Test</code> est la base pour tester toutes
   les bibliothèques de Hoa. Elle intègre atoum et vise à être un pont entre
   les fonctionnalités de Hoa et atoum. Elle ajoute également quelques
-  fonctionnalités si nécessaire. Elle est plus qu'une couche d'abstraction au
-  dessus d'atoum. <code>Hoa\Test</code> fournit également sa propre ligne de
+  fonctionnalités si nécessaire. Elle est plus qu'une couche d'abstraction
+  au-dessus d'atoum. <code>Hoa\Test</code> fournit également sa propre ligne de
   commande pour exécuter les tests avec everything pre-packaged. En conséquence,
   <code>Hoa\Test</code> fournit un environnement de test prêt à l'emploi pour
   Hoa.</p>
@@ -518,7 +518,7 @@ class Bar extends Test\Unit\Suite
   <h3 id="Debugging_mode" for="main-toc">Mode debug</h3>
 
   <p>Dans certains cas, il est possible que certaines informations de debug
-  soient accessibles mais cachées lors d'une exécution des tests classique.
+  soient accessibles, mais cachées lors d'une exécution des tests classiques.
   Pour activer cette sortie, nous devons utiliser l'option
   <code>--debug</code> ; Ainsi :</p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --directories Test/ --debug</code></pre>
@@ -555,7 +555,7 @@ class Bar extends Test\Unit\Suite
   <p>Finalement, <code>Hoa\Test</code> nécessite l'installation de l'extension <a href="https://github.com/atoum/ruler-extension">
   <code>atoum/ruler-extension</code></a>. Cette extension permet de
   <strong>filtrer</strong> précisément les tests à lancer.  Nous y accédons
-  avec l'option <code>--filter</code> suivie par une <strong>expression</strong>.
+  avec l'option <code>--filter</code> suivie d'une <strong>expression</strong>.
   Anecdote : Les expressions sont basées sur <a href="@hack:chapter=Ruler">la bibliothèque <code>Hoa\Ruler</code></a>!</p>
   <p>Les variables suivantes sont disponibles dans l'<strong>expression</strong> du filtre :</p>
   <ul>
@@ -581,7 +581,7 @@ class Bar extends Test\Unit\Suite
   <a href="http://pcre.org/">le format PCRE</a>.</p>
   <p>Finalement, les cas de tests et les suites de tests peuvent avoir un ou plusieurs labels, merci à l'annotation
   <code>@tags</code>. Une annotation est un commentaire du genre <code>/**
-  <em>…</em> */</code> localisé au dessus d'une classe, interface, méthode,
+  <em>…</em> */</code> localisé au-dessus d'une classe, interface, méthode,
   fonction etc. Les labels permettent d'avoir une classification des cas de
   tests. Par exemple :</p>
   <pre><code class="language-php">/**
@@ -623,7 +623,7 @@ public function case_sum()
   <ul>
     <li><strong>Inline</strong>, un cas de test après un autre dans le même
     processus,</li>
-    <li><strong>Isolate</strong>, un cas de test après un autre mais à chaque fois
+    <li><strong>Isolate</strong>, un cas de test après un autre, mais à chaque fois
     dans un nouveau processus,</li>
     <li><strong>Concurrent</strong>, “tous” les cas de tests en même temps dans des
     processus séparés.</li>
@@ -636,16 +636,16 @@ public function case_sum()
   SUT l'est).</p>
   <p>Par defaut, <code>Hoa\Test</code> va utiliser le moteur d'exécution de
   test <strong>concurrent</strong>. Tous les cas de tests ne snt pas exécuté au
-  même moment ; in en fait le nombre de cas de tests à exécuter sont défini par
-  le nombre de processus utilisés.  Par defaut, c'est soit 2 ou 4 dependant de
-  la platforme mais nous pouvons le spécifier avec l'option
+  même moment ; en fait, le nombre de cas de tests à exécuter sont définis par
+  le nombre de processus utilisés.  Par defaut, c'est soit 2 ou 4 dépendant de
+  la platforme, mais nous pouvons le spécifier avec l'option
   <code>--concurrent-processes</code>.
   Ainsi, pour forcer l'utilisation de 1024 processus pour lancer les tests
   (supposant que nous ayons un serveur monstre) :</p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --directories Test/ --concurrent-processes 1024</code></pre>
   <p>Parce que les tests <strong>inline</strong> ne sont pas intéressants pour
   les cas de tests et le contexte de Hoa et parce que l'isolation du moteur
-  d'exécution des tests a plus de contre que de pour comparé au mode concurrent
+  d'exécution des tests a plus de contre que de pour comparer au mode concurrent
   (principalement ce dernier est plus rapide que le premier), nous ne pouvons
   changer le moteur d'exécution des tests. Cependant, pour simuler le moteur
   d'exécution isolé, nous pouvons forcer <code>--concurrent-processes</code> à
