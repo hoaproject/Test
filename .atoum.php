@@ -40,3 +40,10 @@ if (false !== getenv('TRAVIS')) {
 
     $runner->addReport($coverallsReport);
 }
+
+if (file_exists($composerfile = __DIR__ . '/composer.json')) {
+    $telemetry = new atoum\telemetry\report();
+    $telemetry->readProjectNameFromComposerJson($composerfile);
+    $telemetry->addWriter(new atoum\writers\std\out());
+    $runner->addReport($telemetry);
+}
