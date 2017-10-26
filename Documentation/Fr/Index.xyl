@@ -597,25 +597,26 @@ public function case_sum()
   <p>Ici, la variable <code>tags</code> contient un tableau de chaines
   représentant les noms des labels.</p>
 
-  <h3 id="Choose_the_PHP_virtual_machine" for="main-toc">Choose the PHP virtual
-  machine</h3>
+  <h3 id="Choose_the_PHP_virtual_machine" for="main-toc">Choisir la machine
+  virtuelle PHP</h3>
 
-  <p>When testing, this is also useful to be able to select one specific
-  <strong>PHP virtual machine</strong>, like <a href="http://php.net/">a
-  specific version of PHP</a> (the default virtual machine) or
-  <a href="http://hhvm.com/">the latest version of HHVM</a> for instance. There
-  is several PHP virtual machines nowadays and we cannot ignore them.</p>
-  <p>We select a virtual machine by using the
-  <code>--php-binary</code> option and by providing a path to the virtual CLI
-  binary; thus, for instance:</p>
+  <p>Lors de test, il est aussi utile de pouvoir choisir une <strong>machine
+  virtuelle PHP</strong> spécifique, comme <a href="http://php.net/">une
+  version spécifique de PHP</a> (la machine virtuelle par défaut) ou
+  <a href="http://hhvm.com/">la dernière version de HHVM</a> par exemple. Il y
+  a plusieurs machine virtuelle PHP de nos jours et nous ne pouvons les
+  ignorer.</p>
+  <p>Nous choisissons la machine virtuelle en utilisant l'option
+  <code>--php-binary</code> et e fournissant le chemin vers le binaire ;
+  par exemple:</p>
   <pre><code class="language-shell">$ vendor/bin/hoa test:run --directories … --php-binary /usr/bin/php</code></pre>
-  <p>We can imagine the <code>--php-binary</code> option value defined by a
-  global variable. Thus, we could re-use the same script to execute tests
-  against several PHP virtual machines, like:</p>
+  <p>Nous pouvons imaginer la valeur de l'option <code>--php-binary</code>
+  définie par une variable globale. Ainsi, nous pouvons réutiliser le même
+  script pour exécuter les tests avec plusieurs machines virtuelles, comme :</p>
   <pre><code class="language-shell">$ PHP_BIN=/usr/bin/php vendor/bin/hoa test:run --directories … --php-binary $PHP_BIN</code></pre>
-  <p>Please, remember to use PHP syntax and features described in
-  <a href="https://github.com/php/php-langspec">the PHP specification</a> as
-  most as possible.</p>
+  <p>Il est conseillé d'utiliser le plus possible la syntaxe PHP et les
+  fonctionnalités décrites dans <a
+  href="https://github.com/php/php-langspec">les spécifications PHP</a></p>
 
   <h3 id="Test_execution_engine" for="main-toc">Moteur d'exécution des tests</h3>
 
